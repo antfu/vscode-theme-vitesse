@@ -151,10 +151,6 @@ export default function getTheme({ style, name }) {
       'editor.wordHighlightStrongBackground': pick({ light: '#1c6b4810', dark: '#1c6b4810' }),
       'editorBracketMatch.background': pick({ light: '#1c6b4820', dark: '#4d937520' }),
 
-      'editorGutter.modifiedBackground': pick({ light: primer.blue[4], dark: primer.blue[5] }),
-      'editorGutter.addedBackground': pick({ light: primer.green[5], dark: primer.green[4] }),
-      'editorGutter.deletedBackground': primer.red[5],
-
       'diffEditor.insertedTextBackground': pick({ light: '#34d05822', dark: '#28a74530' }),
       'diffEditor.removedTextBackground': pick({ light: '#d73a4922', dark: '#d73a4930' }),
 
@@ -192,10 +188,14 @@ export default function getTheme({ style, name }) {
       'gitDecoration.addedResourceForeground': vitesse('green'),
       'gitDecoration.modifiedResourceForeground': vitesse('blue'),
       'gitDecoration.deletedResourceForeground': vitesse('red'),
-      'gitDecoration.untrackedResourceForeground': vitesse('green'),
+      'gitDecoration.untrackedResourceForeground': vitesse('cyan'),
       'gitDecoration.ignoredResourceForeground': vitesse('secondaryForeground'),
       'gitDecoration.conflictingResourceForeground': vitesse('orange'),
       'gitDecoration.submoduleResourceForeground': vitesse('secondaryForeground'),
+
+      'editorGutter.modifiedBackground': vitesse('blue'),
+      'editorGutter.addedBackground': vitesse('green'),
+      'editorGutter.deletedBackground': vitesse('red'),
 
       'debugToolBar.background': background,
       'editor.stackFrameHighlightBackground': pick({ light: primer.yellow[1], dark: '#a707' }),
@@ -220,7 +220,11 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: ['punctuation', 'meta.tag.block.any.html', 'meta.brace.round'],
+        scope: [
+          'punctuation',
+          'meta.tag.block.any.html',
+          'meta.brace',
+        ],
         settings: {
           foreground: vitesse('punctuation'),
         },
@@ -303,6 +307,7 @@ export default function getTheme({ style, name }) {
         scope: [
           'meta.property-name',
           'entity.other.attribute-name',
+          'meta.object-literal.key',
         ],
         settings: {
           foreground: vitesse('property'),
@@ -315,9 +320,15 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'variable.other',
+        scope: 'namespace',
         settings: {
-          foreground: vitesse('variable'),
+          foreground: vitesse('namespace'),
+        },
+      },
+      {
+        scope: 'keyword.operator',
+        settings: {
+          foreground: vitesse('builtin'),
         },
       },
       {
@@ -409,6 +420,18 @@ export default function getTheme({ style, name }) {
         scope: 'support.variable',
         settings: {
           foreground: vitesse('literal'),
+        },
+      },
+      {
+        scope: 'constant.numeric',
+        settings: {
+          foreground: vitesse('number'),
+        },
+      },
+      {
+        scope: 'constant.language.boolean',
+        settings: {
+          foreground: vitesse('boolean'),
         },
       },
       {
