@@ -12,7 +12,7 @@ export default function getTheme({ style, name }) {
   const foreground = vitesse('foreground')
   const background = vitesse('background')
   const secondaryForeground = vitesse('secondaryForeground')
-  const border = pick({ light: primer.gray[2], dark: primer.white })
+  const border = vitesse('border')
   const activeForeground = vitesse('activeForeground')
   const activeBackground = vitesse('activeBackground')
   const primary = vitesse('primary')
@@ -23,12 +23,12 @@ export default function getTheme({ style, name }) {
       focusBorder: '#00000000',
       foreground,
       descriptionForeground: secondaryForeground,
-      errorForeground: primer.red[6],
+      errorForeground: vitesse('red'),
 
-      'textLink.foreground': pick({ light: primer.blue[5], dark: primer.blue[6] }),
-      'textLink.activeForeground': pick({ light: primer.blue[6], dark: primer.blue[7] }),
+      'textLink.foreground': primary,
+      'textLink.activeForeground': primary,
       'textBlockQuote.background': background,
-      'textBlockQuote.border': primer.gray[2],
+      'textBlockQuote.border': border,
       'textCodeBlock.background': background,
       'textPreformat.foreground': primer.gray[6],
       'textSeparator.foreground': primer.gray[3],
@@ -43,7 +43,7 @@ export default function getTheme({ style, name }) {
       'dropdown.background': background,
       'dropdown.border': border,
       'dropdown.foreground': foreground,
-      'dropdown.listBackground': pick({ light: primer.white, dark: primer.gray[0] }),
+      'dropdown.listBackground': activeBackground,
 
       'input.background': activeBackground,
       'input.border': border,
@@ -53,16 +53,16 @@ export default function getTheme({ style, name }) {
       'badge.foreground': background,
       'badge.background': secondaryForeground,
 
-      'progressBar.background': primer.blue[4],
+      'progressBar.background': primary,
 
-      'titleBar.activeForeground': activeBackground,
-      'titleBar.activeBackground': activeBackground,
+      'titleBar.activeForeground': activeForeground,
+      'titleBar.activeBackground': background,
       'titleBar.inactiveForeground': primer.gray[5],
       'titleBar.inactiveBackground': background,
-      'titleBar.border': border,
+      'titleBar.border': activeBackground,
 
       'activityBar.foreground': foreground,
-      'activityBar.inactiveForeground': vitesse('secondaryForeground'),
+      'activityBar.inactiveForeground': vitesse('ignored'),
       'activityBar.background': background,
       'activityBarBadge.foreground': background,
       'activityBarBadge.background': activeForeground,
@@ -93,9 +93,9 @@ export default function getTheme({ style, name }) {
       'notifications.foreground': foreground,
       'notifications.background': background,
       'notifications.border': border,
-      'notificationsErrorIcon.foreground': primer.red[5],
-      'notificationsWarningIcon.foreground': primer.orange[6],
-      'notificationsInfoIcon.foreground': primer.blue[6],
+      'notificationsErrorIcon.foreground': vitesse('red'),
+      'notificationsWarningIcon.foreground': vitesse('orange'),
+      'notificationsInfoIcon.foreground': vitesse('blue'),
 
       'pickerGroup.border': primer.gray[2],
       'pickerGroup.foreground': foreground,
@@ -136,8 +136,8 @@ export default function getTheme({ style, name }) {
       'editorWidget.background': background,
       'editor.foldBackground': background,
       'editor.lineHighlightBackground': activeBackground,
-      'editorLineNumber.foreground': pick({ light: '#1b1f234d', dark: primer.gray[2] }),
-      'editorLineNumber.activeForeground': foreground,
+      'editorLineNumber.foreground': vitesse('ignored'),
+      'editorLineNumber.activeForeground': activeForeground,
       'editorIndentGuide.background': pick({ light: '#eff2f6', dark: primer.gray[1] }),
       'editorIndentGuide.activeBackground': pick({ light: '#d7dbe0', dark: primer.gray[2] }),
       'editorWhitespace.foreground': pick({ light: primer.gray[3], dark: primer.gray[2] }),
@@ -163,7 +163,7 @@ export default function getTheme({ style, name }) {
 
       'panel.background': background,
       'panel.border': border,
-      'panelTitle.activeBorder': 'transparent',
+      'panelTitle.activeBorder': primary,
       'panelTitle.activeForeground': foreground,
       'panelTitle.inactiveForeground': primer.gray[5],
       'panelInput.border': pick({ light: primer.gray[2], dark: primer.gray[1] }),
@@ -208,7 +208,7 @@ export default function getTheme({ style, name }) {
       'peekViewResult.background': background,
 
       'settings.headerForeground': foreground,
-      'settings.modifiedItemIndicator': primer.blue[4],
+      'settings.modifiedItemIndicator': primary,
       'welcomePage.buttonBackground': primer.gray[1],
       'welcomePage.buttonHoverBackground': primer.gray[2],
     },
@@ -228,6 +228,7 @@ export default function getTheme({ style, name }) {
       {
         scope: [
           'punctuation',
+          'meta.tag.inline.any.html',
           'meta.tag.block.any.html',
           'meta.brace',
         ],
@@ -435,6 +436,12 @@ export default function getTheme({ style, name }) {
         },
       },
       {
+        scope: 'keyword.other.unit',
+        settings: {
+          foreground: vitesse('builtin'),
+        },
+      },
+      {
         scope: 'constant.language.boolean',
         settings: {
           foreground: vitesse('boolean'),
@@ -443,26 +450,26 @@ export default function getTheme({ style, name }) {
       {
         scope: 'meta.module-reference',
         settings: {
-          foreground: primer.blue[6],
+          foreground: primary,
         },
       },
       {
         scope: 'punctuation.definition.list.begin.markdown',
         settings: {
-          foreground: primer.orange[6],
+          foreground: vitesse('orange'),
         },
       },
       {
         scope: ['markup.heading', 'markup.heading entity.name'],
         settings: {
           fontStyle: 'bold',
-          foreground: primer.blue[6],
+          foreground: primary,
         },
       },
       {
         scope: 'markup.quote',
         settings: {
-          foreground: primer.green[6],
+          foreground: primary,
         },
       },
       {
@@ -482,7 +489,7 @@ export default function getTheme({ style, name }) {
       {
         scope: 'markup.raw',
         settings: {
-          foreground: primer.blue[6],
+          foreground: primary,
         },
       },
       {
@@ -567,9 +574,22 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: ['constant.other.reference.link', 'string.other.link'],
+        scope: [
+          'constant.other.reference.link',
+          'string.other.link',
+          'punctuation.definition.string.begin.markdown',
+          'punctuation.definition.string.end.markdown',
+        ],
         settings: {
-          foreground: primer.blue[8],
+          foreground: vitesse('string'),
+        },
+      },
+      {
+        scope: [
+          'markup.underline.link.markdown',
+        ],
+        settings: {
+          foreground: secondaryForeground,
           fontStyle: 'underline',
         },
       },
