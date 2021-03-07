@@ -20,7 +20,7 @@ export const VitesseThemes = {
   secondaryForeground: ['#dedcd590', '#393a3490'],
   ignored: ['#dedcd530', '#393a3450'],
   border: ['#181818', '#f0f0f0'],
-  background: ['#121212', '#fbfbfb'],
+  background: ['#121212', '#ffffff'],
   activeBackground: ['#181818', '#f5f5f5'],
 
   comment: ['#758575', '#a0ada0'],
@@ -42,9 +42,9 @@ export const VitesseThemes = {
   regex: ['#ab5e3f', '#ab5e3f'],
 
   // colors
-  green: ['#4e9666', '#3e8255'],
-  cyan: ['#4fb09d', '#2f8a89'],
-  blue: ['#6394bf', '#296aa3'],
+  green: ['#6bb560', '#439437'],
+  cyan: ['#5bbda9', '#2f8a89'],
+  blue: ['#6ab6d4', '#296aa3'],
   red: ['#e3626e', '#c23e4a'],
   orange: ['#d48b57', '#cf783a'],
   yellow: ['#e6cc77', '#bda437'],
