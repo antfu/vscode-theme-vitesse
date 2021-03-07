@@ -8,7 +8,7 @@
   ],
   "keywords": [
     "theme",
-    "github",
+    "vitesse",
     "light",
     "dark"
   ],
@@ -23,7 +23,7 @@
   "publisher": "antfu",
   "scripts": {
     "build": "esno src/index.ts",
-    "dev": "nodemon --watch src --exec \"esno src/index.ts\""
+    "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\""
   },
   "contributes": {
     "themes": [

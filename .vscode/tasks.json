@@ -4,11 +4,23 @@
     {
       "type": "npm",
       "script": "dev",
-      "group": {
-        "kind": "build",
-        "isDefault": true
+      "isBackground": true,
+      "problemMatcher": {
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "_______",
+          "file": 1,
+          "location": 2,
+          "severity": 3,
+          "code": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "starting",
+          "endsPattern": "clean exit"
+        }
       },
-      "problemMatcher": [],
       "label": "npm: dev"
     }
   ]
