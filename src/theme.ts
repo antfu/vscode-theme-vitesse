@@ -215,7 +215,7 @@ export default function getTheme({ style, name }) {
     semanticHighlighting: true,
     semanticTokenColors: {
       namespace: vitesse('namespace'),
-      interface: vitesse('class'),
+      interface: vitesse('interface'),
       class: vitesse('class'),
     },
     tokenColors: [
