@@ -3,22 +3,13 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "start",
+      "script": "dev",
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": [],
-      "label": "npm: start",
-      "detail": "nodemon --watch src src/index.js"
-    },
-    {
-      "type": "npm",
-      "script": "build",
-      "group": "build",
-      "problemMatcher": [],
-      "label": "npm: build",
-      "detail": "node src/index.js"
+      "label": "npm: dev"
     }
   ]
 }
