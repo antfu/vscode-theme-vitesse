@@ -11,6 +11,7 @@ export default function getTheme({ style, name }) {
 
   const foreground = vitesse('foreground')
   const background = vitesse('background')
+  const secondaryForeground = vitesse('secondaryForeground')
   const border = pick({ light: primer.gray[2], dark: primer.white })
   const activeForeground = vitesse('activeForeground')
   const activeBackground = vitesse('activeBackground')
@@ -21,7 +22,7 @@ export default function getTheme({ style, name }) {
     colors: {
       focusBorder: '#00000000',
       foreground,
-      descriptionForeground: primer.gray[5],
+      descriptionForeground: secondaryForeground,
       errorForeground: primer.red[6],
 
       'textLink.foreground': pick({ light: primer.blue[5], dark: primer.blue[6] }),
@@ -47,14 +48,14 @@ export default function getTheme({ style, name }) {
       'input.background': activeBackground,
       'input.border': border,
       'input.foreground': foreground,
-      'input.placeholderForeground': pick({ light: primer.gray[4], dark: primer.gray[5] }),
+      'input.placeholderForeground': secondaryForeground,
 
       'badge.foreground': background,
-      'badge.background': vitesse('secondaryForeground'),
+      'badge.background': secondaryForeground,
 
       'progressBar.background': primer.blue[4],
 
-      'titleBar.activeForeground': foreground,
+      'titleBar.activeForeground': activeBackground,
       'titleBar.activeBackground': activeBackground,
       'titleBar.inactiveForeground': primer.gray[5],
       'titleBar.inactiveBackground': background,
@@ -68,7 +69,7 @@ export default function getTheme({ style, name }) {
       'activityBar.activeBorder': primary,
       'activityBar.border': border,
 
-      'sideBar.foreground': foreground,
+      'sideBar.foreground': activeForeground,
       'sideBar.background': background,
       'sideBar.border': border,
       'sideBarTitle.foreground': foreground,
@@ -101,12 +102,12 @@ export default function getTheme({ style, name }) {
       'quickInput.background': background,
       'quickInput.foreground': foreground,
 
-      'statusBar.foreground': foreground,
+      'statusBar.foreground': activeForeground,
       'statusBar.background': background,
       'statusBar.border': border,
       'statusBar.noFolderBackground': background,
       'statusBar.debuggingBackground': activeBackground,
-      'statusBar.debuggingForeground': foreground,
+      'statusBar.debuggingForeground': activeForeground,
       'statusBarItem.prominentBackground': activeBackground,
 
       'editorGroupHeader.tabsBackground': background,
@@ -189,7 +190,7 @@ export default function getTheme({ style, name }) {
       'gitDecoration.modifiedResourceForeground': vitesse('blue'),
       'gitDecoration.deletedResourceForeground': vitesse('red'),
       'gitDecoration.untrackedResourceForeground': vitesse('cyan'),
-      'gitDecoration.ignoredResourceForeground': vitesse('secondaryForeground'),
+      'gitDecoration.ignoredResourceForeground': vitesse('ignored'),
       'gitDecoration.conflictingResourceForeground': vitesse('orange'),
       'gitDecoration.submoduleResourceForeground': vitesse('secondaryForeground'),
 
@@ -212,6 +213,11 @@ export default function getTheme({ style, name }) {
       'welcomePage.buttonHoverBackground': primer.gray[2],
     },
     semanticHighlighting: true,
+    semanticTokenColors: {
+      namespace: vitesse('namespace'),
+      interface: vitesse('class'),
+      class: vitesse('class'),
+    },
     tokenColors: [
       {
         scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
@@ -238,7 +244,7 @@ export default function getTheme({ style, name }) {
           'meta.definition.variable',
         ],
         settings: {
-          foreground: vitesse('variable'),
+          foreground: vitesse('constant'),
         },
       },
       {
@@ -256,7 +262,7 @@ export default function getTheme({ style, name }) {
       {
         scope: 'entity.name.tag',
         settings: {
-          foreground: vitesse('function'),
+          foreground: vitesse('literal'),
         },
       },
       {
@@ -413,7 +419,7 @@ export default function getTheme({ style, name }) {
       {
         scope: 'support.constant',
         settings: {
-          foreground: primer.blue[6],
+          foreground: vitesse('constant'),
         },
       },
       {
