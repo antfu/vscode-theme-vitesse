@@ -143,8 +143,8 @@ export default function getTheme({ style, name }) {
       'editorWhitespace.foreground': pick({ light: primer.gray[3], dark: primer.gray[2] }),
       // 'editorCursor.foreground': primary,
 
-      'editor.findMatchBackground': pick({ light: primer.yellow[4], dark: '#ffd33d44' }),
-      'editor.findMatchHighlightBackground': pick({ light: '#ffdf5d66', dark: '#ffd33d22' }),
+      'editor.findMatchBackground': pick({ light: '#e6cc7744', dark: '#e6cc7722' }),
+      'editor.findMatchHighlightBackground': pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
       'editor.inactiveSelectionBackground': pick({ light: '#0366d611', dark: '#3392FF22' }),
       'editor.selectionBackground': pick({ light: '#1c6b4820', dark: '#4d937520' }),
       'editor.selectionHighlightBackground': pick({ light: '#1c6b4830', dark: '#4d937530' }),
@@ -152,8 +152,8 @@ export default function getTheme({ style, name }) {
       'editor.wordHighlightStrongBackground': pick({ light: '#1c6b4810', dark: '#1c6b4810' }),
       'editorBracketMatch.background': pick({ light: '#1c6b4820', dark: '#4d937520' }),
 
-      'diffEditor.insertedTextBackground': pick({ light: '#34d05822', dark: '#28a74530' }),
-      'diffEditor.removedTextBackground': pick({ light: '#d73a4922', dark: '#d73a4930' }),
+      'diffEditor.insertedTextBackground': pick({ light: '#1c6b4822', dark: '#4d937522' }),
+      'diffEditor.removedTextBackground': pick({ light: '#ab595920', dark: '#ab595922' }),
 
       'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0008' }),
       'scrollbarSlider.background': activeBackground,
@@ -211,6 +211,15 @@ export default function getTheme({ style, name }) {
       'settings.modifiedItemIndicator': primary,
       'welcomePage.buttonBackground': primer.gray[1],
       'welcomePage.buttonHoverBackground': primer.gray[2],
+
+      'problemsErrorIcon.foreground': vitesse('red'),
+      'problemsWarningIcon.foreground': vitesse('orange'),
+      'problemsInfoIcon.foreground': vitesse('blue'),
+
+      'editorError.foreground': vitesse('red'),
+      'editorWarning.foreground': vitesse('orange'),
+      'editorInfo.foreground': vitesse('blue'),
+      'editorHint.foreground': vitesse('green'),
     },
     semanticHighlighting: true,
     semanticTokenColors: {
