@@ -220,6 +220,9 @@ export default function getTheme({ style, name }) {
       'editorWarning.foreground': vitesse('orange'),
       'editorInfo.foreground': vitesse('blue'),
       'editorHint.foreground': vitesse('green'),
+
+      'editorGutter.commentRangeForeground': vitesse('ignored'),
+      'editorGutter.foldingControlForeground': vitesse('secondaryForeground'),
     },
     semanticHighlighting: true,
     semanticTokenColors: {
