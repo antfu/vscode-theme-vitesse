@@ -425,8 +425,7 @@ export default function getTheme({ style, name }) {
       {
         scope: 'string.regexp constant.character.escape',
         settings: {
-          fontStyle: 'bold',
-          foreground: primer.green[6],
+          foreground: vitesse('yellow'),
         },
       },
       {
@@ -448,7 +447,9 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'keyword.other.unit',
+        scope: [
+          'keyword.other.unit',
+        ],
         settings: {
           foreground: vitesse('builtin'),
         },
