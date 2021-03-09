@@ -1,7 +1,7 @@
 {
   "name": "theme-vitesse",
   "displayName": "Vitesse Theme",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Vitesse theme for VS Code",
   "categories": [
     "Themes"
