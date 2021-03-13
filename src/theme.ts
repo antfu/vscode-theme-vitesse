@@ -156,9 +156,9 @@ export default function getTheme({ style, name }) {
       'diffEditor.removedTextBackground': pick({ light: '#ab595920', dark: '#ab595922' }),
 
       'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0008' }),
-      'scrollbarSlider.background': activeBackground,
-      'scrollbarSlider.hoverBackground': activeBackground,
-      'scrollbarSlider.activeBackground': activeBackground,
+      'scrollbarSlider.background': vitesse('faded'),
+      'scrollbarSlider.hoverBackground': vitesse('ignored'),
+      'scrollbarSlider.activeBackground': vitesse('ignored'),
       'editorOverviewRuler.border': primer.white,
 
       'panel.background': background,
