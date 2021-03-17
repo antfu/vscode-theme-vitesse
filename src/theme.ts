@@ -20,10 +20,10 @@ export default function getTheme({ style, name }) {
   return {
     name,
     colors: {
-      focusBorder: '#00000000',
+      'focusBorder': '#00000000',
       foreground,
-      descriptionForeground: secondaryForeground,
-      errorForeground: vitesse('red'),
+      'descriptionForeground': secondaryForeground,
+      'errorForeground': vitesse('red'),
 
       'textLink.foreground': primary,
       'textLink.activeForeground': primary,
