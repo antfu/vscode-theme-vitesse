@@ -138,9 +138,9 @@ export default function getTheme({ style, name }) {
       'editor.lineHighlightBackground': activeBackground,
       'editorLineNumber.foreground': vitesse('ignored'),
       'editorLineNumber.activeForeground': activeForeground,
-      'editorIndentGuide.background': pick({ light: '#eff2f6', dark: primer.gray[1] }),
-      'editorIndentGuide.activeBackground': pick({ light: '#d7dbe0', dark: primer.gray[2] }),
-      'editorWhitespace.foreground': pick({ light: primer.gray[3], dark: primer.gray[2] }),
+      'editorIndentGuide.background': pick({ light: '#00000015', dark: '#ffffff15' }),
+      'editorIndentGuide.activeBackground': pick({ light: '#00000030', dark: '#ffffff30' }),
+      'editorWhitespace.foreground': pick({ light: '#00000015', dark: '#ffffff15' }),
       // 'editorCursor.foreground': primary,
 
       'editor.findMatchBackground': pick({ light: '#e6cc7744', dark: '#e6cc7722' }),
