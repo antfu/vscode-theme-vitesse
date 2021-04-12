@@ -406,7 +406,10 @@
       }
     },
     {
-      "scope": "constant.numeric",
+      "scope": [
+        "constant.numeric",
+        "number"
+      ],
       "settings": {
         "foreground": "#296aa3"
       }
@@ -804,6 +807,10 @@
     },
     {
       "token": "constant.numeric",
+      "foreground": "296aa3"
+    },
+    {
+      "token": "number",
       "foreground": "296aa3"
     },
     {
