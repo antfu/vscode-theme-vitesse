@@ -28,7 +28,7 @@
     "build": "esno src/index.ts",
     "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
     "vscode:prepublish": "npm run build",
-    "release": "npx bumpp --commit --tag --push && vsce publish && npm publish"
+    "release": "npx bumpp --commit --tag --push && npm publish && vsce publish"
   },
   "contributes": {
     "themes": [

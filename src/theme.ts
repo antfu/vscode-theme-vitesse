@@ -448,7 +448,10 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'constant.numeric',
+        scope: [
+          'constant.numeric',
+          'number',
+        ],
         settings: {
           foreground: vitesse('number'),
         },
