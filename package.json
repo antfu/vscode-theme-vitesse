@@ -12,6 +12,9 @@
     "light",
     "dark"
   ],
+  "files": [
+    "themes"
+  ],
   "bugs": {
     "url": "https://github.com/antfu/vscode-theme-vitesse/issues"
   },
@@ -25,7 +28,7 @@
     "build": "esno src/index.ts",
     "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
     "vscode:prepublish": "npm run build",
-    "release": "npx bumpp --commit --tag --push && vsce publish"
+    "release": "npx bumpp --commit --tag --push && vsce publish && npm publish"
   },
   "contributes": {
     "themes": [
