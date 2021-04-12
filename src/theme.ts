@@ -1,3 +1,4 @@
+import { toArray } from '@antfu/utils'
 import { getColors } from './primer'
 import { VitesseThemes } from './colors'
 
@@ -17,8 +18,9 @@ export default function getTheme({ style, name }) {
   const activeBackground = vitesse('activeBackground')
   const primary = vitesse('primary')
 
-  return {
+  const theme = {
     name,
+    base: pick({ light: 'vs', dark: 'vs-dark' }),
     colors: {
       'focusBorder': '#00000000',
       foreground,
@@ -240,6 +242,8 @@ export default function getTheme({ style, name }) {
       {
         scope: [
           'punctuation',
+          'delimiter',
+          'delimiter.bracket',
           'meta.tag.inline.any.html',
           'meta.tag.block.any.html',
           'meta.brace',
@@ -333,7 +337,10 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'variable',
+        scope: [
+          'variable',
+          'identifier',
+        ],
         settings: {
           foreground: vitesse('variable'),
         },
@@ -606,6 +613,31 @@ export default function getTheme({ style, name }) {
           fontStyle: 'underline',
         },
       },
+      {
+        scope: [
+          'type.identifier',
+        ],
+        settings: {
+          foreground: vitesse('class'),
+        },
+      },
     ],
+    rules: [],
   }
+
+  // monaco rules
+  const rules: any[] = []
+
+  theme.tokenColors.forEach(({ scope, settings }: any) => {
+    for (const s of toArray(scope)) {
+      rules.push({
+        token: s,
+        foreground: settings.foreground?.replace('#', ''),
+      })
+    }
+  })
+
+  theme.rules = rules
+
+  return theme
 }

@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.6.2",
+    "@antfu/utils": "^0.0.3",
     "@types/color": "^3.0.1",
     "@types/node": "^14.14.37",
     "color": "^3.1.3",

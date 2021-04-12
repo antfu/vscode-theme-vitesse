@@ -52,6 +52,11 @@
     "@antfu/eslint-config-react" "^0.6.2"
     "@antfu/eslint-config-vue" "^0.6.2"
 
+"@antfu/utils@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.0.3.tgz#42fadeb883f7ea11516b8e5005d5d1ee8926bdc8"
+  integrity sha512-OMIf1VA83SZtJHHC2fAN9ZId6vNAeiymGkZZD32n9TT0pxiLvOH1RQc6KRRZyPVkcQ6WPJth4cwzMqscDfy1ew==
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
