@@ -27,7 +27,7 @@
   "scripts": {
     "build": "esno src/index.ts",
     "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
-    "release": "npm run build && npx bumpp --commit --push --push --all &&  && npm publish && vsce publish"
+    "release": "yarn build && npx bumpp --commit --push --push --all && yarn publish && vsce publish"
   },
   "contributes": {
     "themes": [
