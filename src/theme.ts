@@ -234,7 +234,11 @@ export default function getTheme({ style, name }) {
     },
     tokenColors: [
       {
-        scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
+        scope: [
+          'comment',
+          'punctuation.definition.comment',
+          'string.comment',
+        ],
         settings: {
           foreground: vitesse('comment'),
         },
@@ -277,7 +281,10 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'entity.name.tag',
+        scope: [
+          'entity.name.tag',
+          'tag.html',
+        ],
         settings: {
           foreground: vitesse('literal'),
         },
@@ -315,6 +322,7 @@ export default function getTheme({ style, name }) {
           'string',
           'punctuation.definition.string',
           'string punctuation.section.embedded source',
+          'attribute.value',
         ],
         settings: {
           foreground: vitesse('string'),
@@ -331,6 +339,7 @@ export default function getTheme({ style, name }) {
           'meta.property-name',
           'entity.other.attribute-name',
           'meta.object-literal.key',
+          'attribute.name',
         ],
         settings: {
           foreground: vitesse('property'),
