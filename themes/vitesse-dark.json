@@ -89,7 +89,7 @@
     "tab.unfocusedActiveBorderTop": "#181818",
     "tab.activeBorder": "#181818",
     "tab.unfocusedActiveBorder": "#181818",
-    "tab.activeBorderTop": "#121212",
+    "tab.activeBorderTop": "#dedcd590",
     "breadcrumb.foreground": "#959da5",
     "breadcrumb.focusForeground": "#dbd7ca",
     "breadcrumb.activeSelectionForeground": "#d1d5da",
