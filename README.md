@@ -13,6 +13,17 @@ Product Icons | <a href="https://github.com/antfu/vscode-icons-carbon">Carbon</a
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demo | <a href="https://github.com/antfu/vitesse">Vitesse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</samp></sub>
 </p>
 
+## Match with System
+
+```jsonc
+// .vscode/setting.json
+{
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Vitesse Light",
+  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+}
+```
+
 ## Links
 
 [prism-theme-vars](https://github.com/antfu/prism-theme-vars) - where the theme born.
