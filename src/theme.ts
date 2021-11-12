@@ -200,6 +200,13 @@ export default function getTheme({ style, name }) {
       'editorGutter.addedBackground': vitesse('green'),
       'editorGutter.deletedBackground': vitesse('red'),
 
+      'editorBracketHighlight.foreground1': vitesse('cyan'),
+      'editorBracketHighlight.foreground2': vitesse('green'),
+      'editorBracketHighlight.foreground3': vitesse('orange'),
+      'editorBracketHighlight.foreground4': vitesse('magenta'),
+      'editorBracketHighlight.foreground5': vitesse('yellow'),
+      'editorBracketHighlight.foreground6': vitesse('literal'),
+
       'debugToolBar.background': background,
       'editor.stackFrameHighlightBackground': pick({ light: primer.yellow[1], dark: '#a707' }),
       'editor.focusedStackFrameHighlightBackground': pick({ light: primer.yellow[2], dark: '#b808' }),
