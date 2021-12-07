@@ -171,7 +171,7 @@ export default function getTheme({ style, name }) {
       'panelInput.border': pick({ light: primer.gray[2], dark: primer.gray[1] }),
 
       'terminal.foreground': foreground,
-      'terminal.ansiBrightBlack': pick({ light: VitesseThemes.background[0], dark: VitesseThemes.foreground[1] }),
+      'terminal.ansiBrightBlack': pick({ light: '#aaaaaa', dark: '#777777' }),
       'terminal.ansiBrightBlue': vitesse('blue'),
       'terminal.ansiBrightCyan': vitesse('cyan'),
       'terminal.ansiBrightGreen': vitesse('green'),
