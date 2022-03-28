@@ -25,9 +25,9 @@ jobs:
       - run: yarn publish --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - run: npx vsce publish -p ${{secrets.VSCE_TOKEN}}
-        env:
-          VSCE_TOKEN: ${{secrets.VSCE_TOKEN}}
-      - run: npx ovsx publish -p ${{secrets.OVSX_TOKEN}}
-        env:
-          OVSX_TOKEN: ${{secrets.OVSX_TOKEN}}
+      # - run: npx vsce publish -p ${{secrets.VSCE_TOKEN}}
+      #   env:
+      #     VSCE_TOKEN: ${{secrets.VSCE_TOKEN}}
+      # - run: npx ovsx publish -p ${{secrets.OVSX_TOKEN}}
+      #   env:
+      #     OVSX_TOKEN: ${{secrets.OVSX_TOKEN}}
