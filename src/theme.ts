@@ -255,7 +255,10 @@ export default function getTheme({ style, name }) {
           'punctuation',
           'delimiter',
           'delimiter.bracket',
+          'meta.type.annotation.ts',
+          'keyword.operator.type.annotation.ts',
           'meta.tag.inline.any.html',
+          'invalid.illegal.character-not-allowed-here.html',
           'meta.tag.block.any.html',
           'meta.brace',
         ],
@@ -293,7 +296,7 @@ export default function getTheme({ style, name }) {
           'tag.html',
         ],
         settings: {
-          foreground: vitesse('literal'),
+          foreground: vitesse('keyword'),
         },
       },
       {
@@ -303,7 +306,10 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'keyword',
+        scope: [
+          'keyword',
+          'storage.type.class.jsdoc',
+        ],
         settings: {
           foreground: vitesse('keyword'),
         },
@@ -344,12 +350,20 @@ export default function getTheme({ style, name }) {
       {
         scope: [
           'meta.property-name',
-          'entity.other.attribute-name',
           'meta.object-literal.key',
           'attribute.name',
         ],
         settings: {
           foreground: vitesse('property'),
+        },
+      },
+      {
+        scope: [
+          'entity.other.attribute-name',
+          'invalid.deprecated.entity.other.attribute-name.html',
+        ],
+        settings: {
+          foreground: vitesse('variable'),
         },
       },
       {
