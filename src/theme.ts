@@ -136,7 +136,7 @@ export default function getTheme({ style, name }) {
       'editor.foreground': foreground,
       'editor.background': background,
       'editorWidget.background': background,
-      'editor.foldBackground': background,
+      'editor.foldBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
       'editor.lineHighlightBackground': activeBackground,
       'editorLineNumber.foreground': vitesse('ignored'),
       'editorLineNumber.activeForeground': activeForeground,
