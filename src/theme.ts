@@ -51,6 +51,7 @@ export default function getTheme({ style, name }) {
       'input.border': border,
       'input.foreground': foreground,
       'input.placeholderForeground': secondaryForeground,
+      'inputOption.activeBackground': vitesse('ignored'),
 
       'badge.foreground': background,
       'badge.background': secondaryForeground,
