@@ -15,6 +15,8 @@ Product Icons | <a href="https://github.com/antfu/vscode-icons-carbon">Carbon</a
 
 ## Match with System
 
+<!--eslint-skip-->
+
 ```jsonc
 // .vscode/setting.json
 {
