@@ -238,6 +238,7 @@ export default function getTheme({ style, name }) {
     semanticHighlighting: true,
     semanticTokenColors: {
       namespace: vitesse('namespace'),
+      property: vitesse('property'),
       interface: vitesse('interface'),
       class: vitesse('class'),
     },
@@ -254,15 +255,22 @@ export default function getTheme({ style, name }) {
       },
       {
         scope: [
-          'punctuation',
-          'delimiter',
           'delimiter.bracket',
-          'meta.type.annotation.ts',
-          'keyword.operator.type.annotation.ts',
-          'meta.tag.inline.any.html',
+          'delimiter',
           'invalid.illegal.character-not-allowed-here.html',
-          'meta.tag.block.any.html',
+          'keyword.operator.assignment',
+          'keyword.operator.assignment',
+          'keyword.operator.rest',
+          'keyword.operator.spread',
+          'keyword.operator.type.annotation',
           'meta.brace',
+          'meta.tag.block.any.html',
+          'meta.tag.inline.any.html',
+          'meta.tag.structure.input.void.html',
+          'meta.type.annotation',
+          'storage.type.function.arrow',
+          'keyword.operator.type',
+          'punctuation',
         ],
         settings: {
           foreground: vitesse('punctuation'),
@@ -272,7 +280,6 @@ export default function getTheme({ style, name }) {
         scope: [
           'constant',
           'entity.name.constant',
-          'variable.other.constant',
           'variable.language',
           'meta.definition.variable',
         ],
@@ -317,7 +324,12 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: ['storage', 'storage.type'],
+        scope: [
+          'storage',
+          'storage.type',
+          'support.type.builtin',
+          'support.type.builtin.ts',
+        ],
         settings: {
           foreground: vitesse('builtin'),
         },
@@ -351,6 +363,7 @@ export default function getTheme({ style, name }) {
       },
       {
         scope: [
+          'property',
           'meta.property-name',
           'meta.object-literal.key',
           'attribute.name',
@@ -372,6 +385,7 @@ export default function getTheme({ style, name }) {
         scope: [
           'variable',
           'identifier',
+          'entity.name.type.parameter',
         ],
         settings: {
           foreground: vitesse('variable'),
@@ -384,9 +398,12 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'keyword.operator',
+        scope: [
+          'keyword.operator',
+          'meta.var.expr.ts',
+        ],
         settings: {
-          foreground: vitesse('builtin'),
+          foreground: vitesse('operator'),
         },
       },
       {
@@ -468,13 +485,18 @@ export default function getTheme({ style, name }) {
         },
       },
       {
-        scope: 'support.constant',
+        scope: [
+          'support.constant',
+        ],
         settings: {
           foreground: vitesse('constant'),
         },
       },
       {
-        scope: 'support.variable',
+        scope: [
+          'support.variable',
+          'support.type.primitive.ts',
+        ],
         settings: {
           foreground: vitesse('literal'),
         },
@@ -656,6 +678,15 @@ export default function getTheme({ style, name }) {
           foreground: vitesse('class'),
         },
       },
+      {
+        scope: [
+          'entity.other.attribute-name.html.vue',
+        ],
+        settings: {
+          foreground: vitesse('function'),
+        },
+      },
+
     ],
     rules: [],
   }
