@@ -184,6 +184,7 @@
     "namespace": "#b05a78",
     "property": "#a69435",
     "interface": "#2e8c8f",
+    "type": "#2e8c8f",
     "class": "#5a6aa6"
   },
   "tokenColors": [

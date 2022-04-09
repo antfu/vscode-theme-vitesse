@@ -241,6 +241,7 @@ export default function getTheme({ style, name, low = false }) {
       namespace: vitesse('namespace'),
       property: vitesse('property'),
       interface: vitesse('interface'),
+      type: vitesse('interface'),
       class: vitesse('class'),
     },
     tokenColors: [
