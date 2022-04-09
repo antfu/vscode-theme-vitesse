@@ -340,6 +340,7 @@
       "scope": [
         "variable",
         "identifier",
+        "support.type.primitive.ts",
         "entity.name.type.parameter"
       ],
       "settings": {
@@ -452,20 +453,11 @@
     },
     {
       "scope": [
-        "support.variable",
-        "support.type.primitive.ts"
-      ],
-      "settings": {
-        "foreground": "#2f798a"
-      }
-    },
-    {
-      "scope": [
         "constant.numeric",
         "number"
       ],
       "settings": {
-        "foreground": "#296aa3"
+        "foreground": "#5D4BAE"
       }
     },
     {
@@ -864,6 +856,10 @@
       "foreground": "b58451"
     },
     {
+      "token": "support.type.primitive.ts",
+      "foreground": "b58451"
+    },
+    {
       "token": "entity.name.type.parameter",
       "foreground": "b58451"
     },
@@ -944,20 +940,12 @@
       "foreground": "a65e2b"
     },
     {
-      "token": "support.variable",
-      "foreground": "2f798a"
-    },
-    {
-      "token": "support.type.primitive.ts",
-      "foreground": "2f798a"
-    },
-    {
       "token": "constant.numeric",
-      "foreground": "296aa3"
+      "foreground": "5D4BAE"
     },
     {
       "token": "number",
-      "foreground": "296aa3"
+      "foreground": "5D4BAE"
     },
     {
       "token": "keyword.other.unit",

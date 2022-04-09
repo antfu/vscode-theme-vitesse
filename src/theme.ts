@@ -394,6 +394,7 @@ export default function getTheme({ style, name, low = false }) {
         scope: [
           'variable',
           'identifier',
+          'support.type.primitive.ts',
           'entity.name.type.parameter',
         ],
         settings: {
@@ -499,15 +500,6 @@ export default function getTheme({ style, name, low = false }) {
         ],
         settings: {
           foreground: vitesse('constant'),
-        },
-      },
-      {
-        scope: [
-          'support.variable',
-          'support.type.primitive.ts',
-        ],
-        settings: {
-          foreground: vitesse('literal'),
         },
       },
       {
