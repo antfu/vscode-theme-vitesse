@@ -21,8 +21,13 @@ export const VitesseThemes = {
   ignored: ['#dedcd530', '#393a3450'],
   faded: ['#dedcd510', '#393a3410'],
   border: ['#191919', '#f0f0f0'],
-  background: ['#141414', '#ffffff'],
+
+  background: ['#121212', '#ffffff'],
   activeBackground: ['#181818', '#f5f5f5'],
+
+  lowBackground: ['#222', '#F1F0E9'],
+  lowActiveBackground: ['#292929', '#E7E5DB'],
+  lowBorder: ['#252525', '#E7E5DB'],
 
   comment: ['#758575dd', '#a0ada0'],
   string: ['#c98a7d', '#b56959'],

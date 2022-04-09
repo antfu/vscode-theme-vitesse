@@ -42,6 +42,16 @@
         "label": "Vitesse Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/vitesse-dark.json"
+      },
+      {
+        "label": "Vitesse Light Low",
+        "uiTheme": "vs",
+        "path": "./themes/vitesse-light-low.json"
+      },
+      {
+        "label": "Vitesse Dark Low",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vitesse-dark-low.json"
       }
     ]
   },

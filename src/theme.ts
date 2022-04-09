@@ -2,7 +2,7 @@ import { toArray } from '@antfu/utils'
 import { getColors } from './primer'
 import { VitesseThemes } from './colors'
 
-export default function getTheme({ style, name }) {
+export default function getTheme({ style, name, low = false }) {
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
   const pick = options => options[style]
 
@@ -11,12 +11,13 @@ export default function getTheme({ style, name }) {
   const primer = getColors(style)
 
   const foreground = vitesse('foreground')
-  const background = vitesse('background')
   const secondaryForeground = vitesse('secondaryForeground')
-  const border = vitesse('border')
   const activeForeground = vitesse('activeForeground')
-  const activeBackground = vitesse('activeBackground')
   const primary = vitesse('primary')
+
+  const border = low ? vitesse('lowBorder') : vitesse('border')
+  const background = low ? vitesse('lowBackground') : vitesse('background')
+  const activeBackground = low ? vitesse('lowActiveBackground') : vitesse('activeBackground')
 
   const theme = {
     name,
