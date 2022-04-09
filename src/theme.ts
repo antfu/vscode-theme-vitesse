@@ -6,7 +6,7 @@ export default function getTheme({ style, name }) {
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
   const pick = options => options[style]
 
-  const vitesse = (key: keyof typeof VitesseThemes) => pick({ light: VitesseThemes[key][1], dark: VitesseThemes[key][0] })
+  const vitesse = (key: keyof typeof VitesseThemes, op = '') => pick({ light: VitesseThemes[key][1] + op, dark: VitesseThemes[key][0] + op })
 
   const primer = getColors(style)
 
@@ -328,7 +328,8 @@ export default function getTheme({ style, name }) {
           'storage',
           'storage.type',
           'support.type.builtin',
-          'support.type.builtin.ts',
+          'constant.language.undefined',
+          'constant.language.null',
         ],
         settings: {
           foreground: vitesse('builtin'),
@@ -347,12 +348,19 @@ export default function getTheme({ style, name }) {
       {
         scope: [
           'string',
-          'punctuation.definition.string',
           'string punctuation.section.embedded source',
           'attribute.value',
         ],
         settings: {
           foreground: vitesse('string'),
+        },
+      },
+      {
+        scope: [
+          'punctuation.definition.string',
+        ],
+        settings: {
+          foreground: vitesse('string', 'aa'),
         },
       },
       {
@@ -546,7 +554,7 @@ export default function getTheme({ style, name }) {
       {
         scope: 'markup.quote',
         settings: {
-          foreground: primary,
+          foreground: vitesse('interface'),
         },
       },
       {

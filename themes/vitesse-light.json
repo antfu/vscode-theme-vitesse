@@ -275,7 +275,8 @@
         "storage",
         "storage.type",
         "support.type.builtin",
-        "support.type.builtin.ts"
+        "constant.language.undefined",
+        "constant.language.null"
       ],
       "settings": {
         "foreground": "#ab5959"
@@ -294,12 +295,19 @@
     {
       "scope": [
         "string",
-        "punctuation.definition.string",
         "string punctuation.section.embedded source",
         "attribute.value"
       ],
       "settings": {
         "foreground": "#b56959"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#b56959aa"
       }
     },
     {
@@ -499,7 +507,7 @@
     {
       "scope": "markup.quote",
       "settings": {
-        "foreground": "#1c6b48"
+        "foreground": "#2e8c8f"
       }
     },
     {
@@ -784,7 +792,11 @@
       "foreground": "ab5959"
     },
     {
-      "token": "support.type.builtin.ts",
+      "token": "constant.language.undefined",
+      "foreground": "ab5959"
+    },
+    {
+      "token": "constant.language.null",
       "foreground": "ab5959"
     },
     {
@@ -804,16 +816,16 @@
       "foreground": "b56959"
     },
     {
-      "token": "punctuation.definition.string",
-      "foreground": "b56959"
-    },
-    {
       "token": "string punctuation.section.embedded source",
       "foreground": "b56959"
     },
     {
       "token": "attribute.value",
       "foreground": "b56959"
+    },
+    {
+      "token": "punctuation.definition.string",
+      "foreground": "b56959aa"
     },
     {
       "token": "support",
@@ -973,7 +985,7 @@
     },
     {
       "token": "markup.quote",
-      "foreground": "1c6b48"
+      "foreground": "2e8c8f"
     },
     {
       "token": "markup.italic",
