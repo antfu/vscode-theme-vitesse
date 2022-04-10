@@ -44,14 +44,14 @@
         "path": "./themes/vitesse-dark.json"
       },
       {
-        "label": "Vitesse Light Low",
+        "label": "Vitesse Light Soft",
         "uiTheme": "vs",
-        "path": "./themes/vitesse-light-low.json"
+        "path": "./themes/vitesse-light-soft.json"
       },
       {
-        "label": "Vitesse Dark Low",
+        "label": "Vitesse Dark Soft",
         "uiTheme": "vs-dark",
-        "path": "./themes/vitesse-dark-low.json"
+        "path": "./themes/vitesse-dark-soft.json"
       }
     ]
   },
