@@ -208,7 +208,7 @@ export default function getTheme({ style, name, soft = false }) {
       'editorBracketHighlight.foreground3': vitesse('orange'),
       'editorBracketHighlight.foreground4': vitesse('magenta'),
       'editorBracketHighlight.foreground5': vitesse('yellow'),
-      'editorBracketHighlight.foreground6': vitesse('literal'),
+      'editorBracketHighlight.foreground6': vitesse('blue'),
 
       'debugToolBar.background': background,
       'editor.stackFrameHighlightBackground': pick({ light: primer.yellow[1], dark: '#a707' }),

@@ -31,10 +31,9 @@ export const VitesseThemes = {
 
   comment: ['#758575dd', '#a0ada0'],
   string: ['#c98a7d', '#b56959'],
-  literal: ['#4C9A91', '#2f798a'],
   variable: ['#bf9763', '#b58451'],
   keyword: ['#4d9375', '#1e754f'],
-  number: ['#6371BF', '#5D4BAE'],
+  number: ['#4C9A91', '#2f798a'],
   boolean: ['#4d9375', '#1e754f'],
   operator: ['#cb7676', '#ab5959'],
   function: ['#80a665', '#59873a'],

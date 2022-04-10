@@ -159,7 +159,7 @@
     "editorBracketHighlight.foreground3": "#d4976c",
     "editorBracketHighlight.foreground4": "#db889a",
     "editorBracketHighlight.foreground5": "#e6cc77",
-    "editorBracketHighlight.foreground6": "#4C9A91",
+    "editorBracketHighlight.foreground6": "#6394bf",
     "debugToolBar.background": "#121212",
     "editor.stackFrameHighlightBackground": "#a707",
     "editor.focusedStackFrameHighlightBackground": "#b808",
@@ -460,7 +460,7 @@
         "number"
       ],
       "settings": {
-        "foreground": "#6371BF"
+        "foreground": "#4C9A91"
       }
     },
     {
@@ -944,11 +944,11 @@
     },
     {
       "token": "constant.numeric",
-      "foreground": "6371BF"
+      "foreground": "4C9A91"
     },
     {
       "token": "number",
-      "foreground": "6371BF"
+      "foreground": "4C9A91"
     },
     {
       "token": "keyword.other.unit",
