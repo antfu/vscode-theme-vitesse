@@ -182,7 +182,7 @@
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "namespace": "#b05a78",
-    "property": "#a69124",
+    "property": "#998418",
     "interface": "#2e8c8f",
     "type": "#2e8c8f",
     "class": "#5a6aa6"
@@ -312,9 +312,17 @@
       }
     },
     {
+      "scope": [
+        "punctuation.support.type.property-name"
+      ],
+      "settings": {
+        "foreground": "#998418aa"
+      }
+    },
+    {
       "scope": "support",
       "settings": {
-        "foreground": "#a69124"
+        "foreground": "#998418"
       }
     },
     {
@@ -322,10 +330,11 @@
         "property",
         "meta.property-name",
         "meta.object-literal.key",
+        "entity.name.tag.yaml",
         "attribute.name"
       ],
       "settings": {
-        "foreground": "#a69124"
+        "foreground": "#998418"
       }
     },
     {
@@ -470,7 +479,10 @@
       }
     },
     {
-      "scope": "constant.language.boolean",
+      "scope": [
+        "constant.language.boolean",
+        "constant.language"
+      ],
       "settings": {
         "foreground": "#1e754f"
       }
@@ -829,24 +841,32 @@
       "foreground": "b56959aa"
     },
     {
+      "token": "punctuation.support.type.property-name",
+      "foreground": "998418aa"
+    },
+    {
       "token": "support",
-      "foreground": "a69124"
+      "foreground": "998418"
     },
     {
       "token": "property",
-      "foreground": "a69124"
+      "foreground": "998418"
     },
     {
       "token": "meta.property-name",
-      "foreground": "a69124"
+      "foreground": "998418"
     },
     {
       "token": "meta.object-literal.key",
-      "foreground": "a69124"
+      "foreground": "998418"
+    },
+    {
+      "token": "entity.name.tag.yaml",
+      "foreground": "998418"
     },
     {
       "token": "attribute.name",
-      "foreground": "a69124"
+      "foreground": "998418"
     },
     {
       "token": "entity.other.attribute-name",
@@ -962,6 +982,10 @@
     },
     {
       "token": "constant.language.boolean",
+      "foreground": "1e754f"
+    },
+    {
+      "token": "constant.language",
       "foreground": "1e754f"
     },
     {

@@ -366,6 +366,14 @@ export default function getTheme({ style, name, soft = false }) {
         },
       },
       {
+        scope: [
+          'punctuation.support.type.property-name',
+        ],
+        settings: {
+          foreground: vitesse('property', 'aa'),
+        },
+      },
+      {
         scope: 'support',
         settings: {
           foreground: vitesse('property'),
@@ -376,6 +384,7 @@ export default function getTheme({ style, name, soft = false }) {
           'property',
           'meta.property-name',
           'meta.object-literal.key',
+          'entity.name.tag.yaml',
           'attribute.name',
         ],
         settings: {
@@ -521,7 +530,10 @@ export default function getTheme({ style, name, soft = false }) {
         },
       },
       {
-        scope: 'constant.language.boolean',
+        scope: [
+          'constant.language.boolean',
+          'constant.language',
+        ],
         settings: {
           foreground: vitesse('boolean'),
         },
