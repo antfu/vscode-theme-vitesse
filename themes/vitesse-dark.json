@@ -647,6 +647,14 @@
       "settings": {
         "foreground": "#80a665"
       }
+    },
+    {
+      "scope": [
+        "invalid.illegal.unrecognized-tag.html"
+      ],
+      "settings": {
+        "fontStyle": "normal"
+      }
     }
   ],
   "rules": [
@@ -1101,6 +1109,9 @@
     {
       "token": "entity.other.attribute-name.html.vue",
       "foreground": "80a665"
+    },
+    {
+      "token": "invalid.illegal.unrecognized-tag.html"
     }
   ]
 }

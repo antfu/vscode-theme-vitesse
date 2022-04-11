@@ -31,7 +31,7 @@ export const VitesseThemes = {
 
   comment: ['#758575dd', '#a0ada0'],
   string: ['#c98a7d', '#b56959'],
-  variable: ['#bf9763', '#b58451'],
+  variable: ['#bf9763', '#b07d48'],
   keyword: ['#4d9375', '#1e754f'],
   number: ['#4C9A91', '#2f798a'],
   boolean: ['#4d9375', '#1e754f'],
@@ -41,7 +41,7 @@ export const VitesseThemes = {
   class: ['#689DBF', '#5a6aa6'],
   interface: ['#5DA2A9', '#2e8c8f'],
   builtin: ['#cb7676', '#ab5959'],
-  property: ['#b8a965', '#a69435'],
+  property: ['#b8a965', '#a69124'],
   namespace: ['#db889a', '#b05a78'],
   punctuation: ['#666666', '#999999'],
   decorator: ['#bd8f8f', '#bd8f8f'],

@@ -688,7 +688,14 @@ export default function getTheme({ style, name, soft = false }) {
           foreground: vitesse('function'),
         },
       },
-
+      {
+        scope: [
+          'invalid.illegal.unrecognized-tag.html',
+        ],
+        settings: {
+          fontStyle: 'normal',
+        },
+      },
     ],
     rules: [],
   }

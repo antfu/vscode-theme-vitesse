@@ -182,7 +182,7 @@
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "namespace": "#b05a78",
-    "property": "#a69435",
+    "property": "#a69124",
     "interface": "#2e8c8f",
     "type": "#2e8c8f",
     "class": "#5a6aa6"
@@ -314,7 +314,7 @@
     {
       "scope": "support",
       "settings": {
-        "foreground": "#a69435"
+        "foreground": "#a69124"
       }
     },
     {
@@ -325,7 +325,7 @@
         "attribute.name"
       ],
       "settings": {
-        "foreground": "#a69435"
+        "foreground": "#a69124"
       }
     },
     {
@@ -334,7 +334,7 @@
         "invalid.deprecated.entity.other.attribute-name.html"
       ],
       "settings": {
-        "foreground": "#b58451"
+        "foreground": "#b07d48"
       }
     },
     {
@@ -345,7 +345,7 @@
         "entity.name.type.parameter"
       ],
       "settings": {
-        "foreground": "#b58451"
+        "foreground": "#b07d48"
       }
     },
     {
@@ -645,6 +645,14 @@
       "settings": {
         "foreground": "#59873a"
       }
+    },
+    {
+      "scope": [
+        "invalid.illegal.unrecognized-tag.html"
+      ],
+      "settings": {
+        "fontStyle": "normal"
+      }
     }
   ],
   "rules": [
@@ -822,47 +830,47 @@
     },
     {
       "token": "support",
-      "foreground": "a69435"
+      "foreground": "a69124"
     },
     {
       "token": "property",
-      "foreground": "a69435"
+      "foreground": "a69124"
     },
     {
       "token": "meta.property-name",
-      "foreground": "a69435"
+      "foreground": "a69124"
     },
     {
       "token": "meta.object-literal.key",
-      "foreground": "a69435"
+      "foreground": "a69124"
     },
     {
       "token": "attribute.name",
-      "foreground": "a69435"
+      "foreground": "a69124"
     },
     {
       "token": "entity.other.attribute-name",
-      "foreground": "b58451"
+      "foreground": "b07d48"
     },
     {
       "token": "invalid.deprecated.entity.other.attribute-name.html",
-      "foreground": "b58451"
+      "foreground": "b07d48"
     },
     {
       "token": "variable",
-      "foreground": "b58451"
+      "foreground": "b07d48"
     },
     {
       "token": "identifier",
-      "foreground": "b58451"
+      "foreground": "b07d48"
     },
     {
       "token": "support.type.primitive.ts",
-      "foreground": "b58451"
+      "foreground": "b07d48"
     },
     {
       "token": "entity.name.type.parameter",
-      "foreground": "b58451"
+      "foreground": "b07d48"
     },
     {
       "token": "namespace",
@@ -1099,6 +1107,9 @@
     {
       "token": "entity.other.attribute-name.html.vue",
       "foreground": "59873a"
+    },
+    {
+      "token": "invalid.illegal.unrecognized-tag.html"
     }
   ]
 }
