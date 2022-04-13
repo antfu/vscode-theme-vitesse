@@ -53,7 +53,7 @@
     "list.inactiveSelectionForeground": "#393a34",
     "list.activeSelectionForeground": "#393a34",
     "list.hoverBackground": "#E7E5DB",
-    "list.inactiveSelectionBackground": "#F1F0E9",
+    "list.inactiveSelectionBackground": "#E7E5DB",
     "list.activeSelectionBackground": "#E7E5DB",
     "list.inactiveFocusBackground": "#F1F0E9",
     "list.focusBackground": "#E7E5DB",
