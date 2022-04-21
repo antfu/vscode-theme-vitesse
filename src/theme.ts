@@ -235,6 +235,9 @@ export default function getTheme({ style, name, soft = false }) {
 
       'editorGutter.commentRangeForeground': vitesse('ignored'),
       'editorGutter.foldingControlForeground': vitesse('secondaryForeground'),
+
+      'editorInlayHint.foreground': vitesse('punctuation'),
+      'editorInlayHint.background': '#00000000',
     },
     semanticHighlighting: true,
     semanticTokenColors: {

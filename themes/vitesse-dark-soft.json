@@ -179,7 +179,9 @@
     "editorInfo.foreground": "#6394bf",
     "editorHint.foreground": "#4d9375",
     "editorGutter.commentRangeForeground": "#dedcd530",
-    "editorGutter.foldingControlForeground": "#dedcd590"
+    "editorGutter.foldingControlForeground": "#dedcd590",
+    "editorInlayHint.foreground": "#666666",
+    "editorInlayHint.background": "#00000000"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
