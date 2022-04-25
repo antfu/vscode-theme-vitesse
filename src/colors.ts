@@ -54,5 +54,5 @@ export const VitesseThemes = {
   red: ['#cb7676', '#ab5959'],
   orange: ['#d4976c', '#a65e2b'],
   yellow: ['#e6cc77', '#bda437'],
-  magenta: ['#d973c1', '#b53f98'],
+  magenta: ['#d9739f', '#a13865'],
 }
