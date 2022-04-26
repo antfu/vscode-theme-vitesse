@@ -173,7 +173,7 @@ export default function getTheme({ style, name, soft = false }) {
       'panelInput.border': pick({ light: primer.gray[2], dark: primer.gray[1] }),
 
       'terminal.foreground': foreground,
-      'terminal.selectionBackground': pick({ light: '#eeeeee', dark: '#222222' }),
+      'terminal.selectionBackground': pick({ light: activeBackground, dark: activeBackground }),
       'terminal.ansiBrightBlack': pick({ light: '#aaaaaa', dark: '#777777' }),
       'terminal.ansiBrightBlue': vitesse('blue'),
       'terminal.ansiBrightCyan': vitesse('cyan'),
