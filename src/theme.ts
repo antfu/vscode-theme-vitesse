@@ -19,6 +19,10 @@ export default function getTheme({ style, name, soft = false }) {
   const background = soft ? vitesse('lowBackground') : vitesse('background')
   const activeBackground = soft ? vitesse('lowActiveBackground') : vitesse('activeBackground')
 
+  const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
+  const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
+  const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
+
   const theme = {
     name,
     base: pick({ light: 'vs', dark: 'vs-dark' }),
@@ -132,7 +136,7 @@ export default function getTheme({ style, name, soft = false }) {
 
       'breadcrumb.foreground': primer.gray[5],
       'breadcrumb.focusForeground': foreground,
-      'breadcrumb.activeSelectionForeground': primer.gray[6],
+      'breadcrumb.activeSelectionForeground': selectionBackgroundActive,
       'breadcrumbPicker.background': background,
 
       'editor.foreground': foreground,
@@ -149,9 +153,9 @@ export default function getTheme({ style, name, soft = false }) {
 
       'editor.findMatchBackground': pick({ light: '#e6cc7744', dark: '#e6cc7722' }),
       'editor.findMatchHighlightBackground': pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
-      'editor.inactiveSelectionBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
-      'editor.selectionBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
-      'editor.selectionHighlightBackground': pick({ light: '#22222215', dark: '#eeeeee15' }),
+      'editor.inactiveSelectionBackground': selectionBackgroundInActive,
+      'editor.selectionBackground': selectionBackground,
+      'editor.selectionHighlightBackground': selectionBackgroundInActive,
       'editor.wordHighlightBackground': pick({ light: '#1c6b4805', dark: '#1c6b4805' }),
       'editor.wordHighlightStrongBackground': pick({ light: '#1c6b4810', dark: '#1c6b4810' }),
       'editorBracketMatch.background': pick({ light: '#1c6b4820', dark: '#4d937520' }),
@@ -173,7 +177,7 @@ export default function getTheme({ style, name, soft = false }) {
       'panelInput.border': pick({ light: primer.gray[2], dark: primer.gray[1] }),
 
       'terminal.foreground': foreground,
-      'terminal.selectionBackground': pick({ light: activeBackground, dark: activeBackground }),
+      'terminal.selectionBackground': selectionBackgroundActive,
       'terminal.ansiBrightBlack': pick({ light: '#aaaaaa', dark: '#777777' }),
       'terminal.ansiBrightBlue': vitesse('blue'),
       'terminal.ansiBrightCyan': vitesse('cyan'),
