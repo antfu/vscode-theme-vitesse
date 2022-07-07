@@ -28,9 +28,9 @@
   "scripts": {
     "build": "esno src/index.ts",
     "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
-    "vscode:prepublish": "yarn build",
+    "vscode:prepublish": "npm run build",
     "lint": "eslint .",
-    "release": "yarn build && npx bumpp --commit --tag --push --all && vsce publish --no-dependencies"
+    "release": "npm run build && npx bumpp --commit --tag --push --all && vsce publish --no-dependencies"
   },
   "contributes": {
     "themes": [
