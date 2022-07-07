@@ -2,6 +2,7 @@
   "name": "theme-vitesse",
   "displayName": "Vitesse Theme",
   "version": "0.4.10",
+  "packageManager": "pnpm@7.5.0",
   "description": "Vitesse theme for VS Code",
   "categories": [
     "Themes"
@@ -42,6 +43,11 @@
         "label": "Vitesse Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/vitesse-dark.json"
+      },
+      {
+        "label": "Vitesse Black",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vitesse-black.json"
       },
       {
         "label": "Vitesse Light Soft",

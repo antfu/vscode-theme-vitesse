@@ -18,6 +18,14 @@ fs.mkdir('./themes', { recursive: true })
       }), null, 2)}\n`,
     ),
     fs.writeFile(
+      './themes/vitesse-black.json',
+      `${JSON.stringify(getTheme({
+        style: 'dark',
+        name: 'Vitesse Black',
+        black: true,
+      }), null, 2)}\n`,
+    ),
+    fs.writeFile(
       './themes/vitesse-light-soft.json',
       `${JSON.stringify(getTheme({
         style: 'light',

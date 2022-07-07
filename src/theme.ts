@@ -2,7 +2,7 @@ import { toArray } from '@antfu/utils'
 import { getColors } from './primer'
 import { VitesseThemes } from './colors'
 
-export default function getTheme({ style, name, soft = false }) {
+export default function getTheme({ style, name, soft = false, black = false }) {
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
   const pick = options => options[style]
 
@@ -16,8 +16,8 @@ export default function getTheme({ style, name, soft = false }) {
   const primary = vitesse('primary')
 
   const border = soft ? vitesse('lowBorder') : vitesse('border')
-  const background = soft ? vitesse('lowBackground') : vitesse('background')
-  const activeBackground = soft ? vitesse('lowActiveBackground') : vitesse('activeBackground')
+  const background = black ? '#000' : soft ? vitesse('lowBackground') : vitesse('background')
+  const activeBackground = black ? '#050505' : soft ? vitesse('lowActiveBackground') : vitesse('activeBackground')
 
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
@@ -411,11 +411,18 @@ export default function getTheme({ style, name, soft = false }) {
         scope: [
           'variable',
           'identifier',
-          'support.type.primitive.ts',
-          'entity.name.type.parameter',
         ],
         settings: {
           foreground: vitesse('variable'),
+        },
+      },
+      {
+        scope: [
+          'support.type.primitive',
+          'entity.name.type',
+        ],
+        settings: {
+          foreground: vitesse('type'),
         },
       },
       {
