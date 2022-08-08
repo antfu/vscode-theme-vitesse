@@ -17,7 +17,7 @@
     "button.foreground": "#222",
     "button.hoverBackground": "#4d9375",
     "checkbox.background": "#292929",
-    "checkbox.border": "#111",
+    "checkbox.border": "#2f363d",
     "dropdown.background": "#222",
     "dropdown.border": "#252525",
     "dropdown.foreground": "#dbd7caee",

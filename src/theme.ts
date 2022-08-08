@@ -45,7 +45,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'button.hoverBackground': primary,
 
       'checkbox.background': activeBackground,
-      'checkbox.border': pick({ light: primer.gray[3], dark: primer.white }),
+      'checkbox.border': pick({ light: primer.gray[3], dark: primer.gray[1] }),
 
       'dropdown.background': background,
       'dropdown.border': border,
