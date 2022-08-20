@@ -267,11 +267,10 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'delimiter.bracket',
           'delimiter',
           'invalid.illegal.character-not-allowed-here.html',
-          'keyword.operator.assignment',
-          'keyword.operator.assignment',
           'keyword.operator.rest',
           'keyword.operator.spread',
           'keyword.operator.type.annotation',
+          'keyword.operator.relational.ts',
           'meta.brace',
           'meta.tag.block.any.html',
           'meta.tag.inline.any.html',
@@ -279,6 +278,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'meta.type.annotation',
           'storage.type.function.arrow',
           'keyword.operator.type',
+          'meta.objectliteral.ts',
           'punctuation',
         ],
         settings: {
@@ -367,17 +367,10 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       {
         scope: [
           'punctuation.definition.string',
-        ],
-        settings: {
-          foreground: vitesse('string', 'aa'),
-        },
-      },
-      {
-        scope: [
           'punctuation.support.type.property-name',
         ],
         settings: {
-          foreground: vitesse('property', 'aa'),
+          foreground: vitesse('string', 'aa'),
         },
       },
       {

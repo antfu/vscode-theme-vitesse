@@ -207,11 +207,10 @@
         "delimiter.bracket",
         "delimiter",
         "invalid.illegal.character-not-allowed-here.html",
-        "keyword.operator.assignment",
-        "keyword.operator.assignment",
         "keyword.operator.rest",
         "keyword.operator.spread",
         "keyword.operator.type.annotation",
+        "keyword.operator.relational.ts",
         "meta.brace",
         "meta.tag.block.any.html",
         "meta.tag.inline.any.html",
@@ -219,6 +218,7 @@
         "meta.type.annotation",
         "storage.type.function.arrow",
         "keyword.operator.type",
+        "meta.objectliteral.ts",
         "punctuation"
       ],
       "settings": {
@@ -309,18 +309,11 @@
     },
     {
       "scope": [
-        "punctuation.definition.string"
-      ],
-      "settings": {
-        "foreground": "#c98a7daa"
-      }
-    },
-    {
-      "scope": [
+        "punctuation.definition.string",
         "punctuation.support.type.property-name"
       ],
       "settings": {
-        "foreground": "#b8a965aa"
+        "foreground": "#c98a7daa"
       }
     },
     {
@@ -704,14 +697,6 @@
       "foreground": "666666"
     },
     {
-      "token": "keyword.operator.assignment",
-      "foreground": "666666"
-    },
-    {
-      "token": "keyword.operator.assignment",
-      "foreground": "666666"
-    },
-    {
       "token": "keyword.operator.rest",
       "foreground": "666666"
     },
@@ -721,6 +706,10 @@
     },
     {
       "token": "keyword.operator.type.annotation",
+      "foreground": "666666"
+    },
+    {
+      "token": "keyword.operator.relational.ts",
       "foreground": "666666"
     },
     {
@@ -749,6 +738,10 @@
     },
     {
       "token": "keyword.operator.type",
+      "foreground": "666666"
+    },
+    {
+      "token": "meta.objectliteral.ts",
       "foreground": "666666"
     },
     {
@@ -853,7 +846,7 @@
     },
     {
       "token": "punctuation.support.type.property-name",
-      "foreground": "b8a965aa"
+      "foreground": "c98a7daa"
     },
     {
       "token": "support",
