@@ -15,9 +15,19 @@ export default function getTheme({ style, name, soft = false, black = false }) {
   const activeForeground = vitesse('activeForeground')
   const primary = vitesse('primary')
 
-  const border = soft ? vitesse('lowBorder') : vitesse('border')
-  const background = black ? '#000' : soft ? vitesse('lowBackground') : vitesse('background')
-  const activeBackground = black ? '#050505' : soft ? vitesse('lowActiveBackground') : vitesse('activeBackground')
+  const border = soft
+    ? vitesse('lowBorder')
+    : vitesse('border')
+  const background = black
+    ? '#000'
+    : soft
+      ? vitesse('lowBackground')
+      : vitesse('background')
+  const activeBackground = black
+    ? '#050505'
+    : soft
+      ? vitesse('lowActiveBackground')
+      : vitesse('activeBackground')
 
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
@@ -136,6 +146,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
 
       'breadcrumb.foreground': primer.gray[5],
       'breadcrumb.focusForeground': foreground,
+      'breadcrumb.background': activeBackground,
       'breadcrumb.activeSelectionForeground': selectionBackgroundActive,
       'breadcrumbPicker.background': background,
 
@@ -163,7 +174,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'diffEditor.insertedTextBackground': pick({ light: '#1c6b4815', dark: '#4d937522' }),
       'diffEditor.removedTextBackground': pick({ light: '#ab595910', dark: '#ab595922' }),
 
-      'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0008' }),
+      'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0000' }),
       'scrollbarSlider.background': vitesse('faded'),
       'scrollbarSlider.hoverBackground': vitesse('ignored'),
       'scrollbarSlider.activeBackground': vitesse('ignored'),
@@ -242,6 +253,9 @@ export default function getTheme({ style, name, soft = false, black = false }) {
 
       'editorInlayHint.foreground': vitesse('punctuation'),
       'editorInlayHint.background': '#00000000',
+
+      'editorStickyScroll.background': activeBackground,
+      'editorStickyScrollHover.background': activeBackground,
     },
     semanticHighlighting: true,
     semanticTokenColors: {

@@ -23,7 +23,7 @@ export const VitesseThemes = {
   border: ['#191919', '#f0f0f0'],
 
   background: ['#121212', '#ffffff'],
-  activeBackground: ['#181818', '#f5f5f5'],
+  activeBackground: ['#181818', '#f7f7f7'],
 
   lowBackground: ['#222', '#F1F0E9'],
   lowActiveBackground: ['#292929', '#E7E5DB'],
