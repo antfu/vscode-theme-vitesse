@@ -491,7 +491,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
         },
       },
       {
-        scope: 'string source',
+        scope: 'string',
         settings: {
           foreground,
         },

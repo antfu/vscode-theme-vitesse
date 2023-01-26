@@ -421,7 +421,7 @@
       }
     },
     {
-      "scope": "string source",
+      "scope": "string",
       "settings": {
         "foreground": "#393a34"
       }
@@ -934,7 +934,7 @@
       "foreground": "b31d28"
     },
     {
-      "token": "string source",
+      "token": "string",
       "foreground": "393a34"
     },
     {
