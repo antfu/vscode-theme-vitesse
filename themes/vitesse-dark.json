@@ -316,7 +316,7 @@
         "punctuation.support.type.property-name"
       ],
       "settings": {
-        "foreground": "#c98a7daa"
+        "foreground": "#c98a7d99"
       }
     },
     {
@@ -420,12 +420,6 @@
       "scope": "message.error",
       "settings": {
         "foreground": "#fdaeb7"
-      }
-    },
-    {
-      "scope": "string",
-      "settings": {
-        "foreground": "#dbd7caee"
       }
     },
     {
@@ -845,11 +839,11 @@
     },
     {
       "token": "punctuation.definition.string",
-      "foreground": "c98a7daa"
+      "foreground": "c98a7d99"
     },
     {
       "token": "punctuation.support.type.property-name",
-      "foreground": "c98a7daa"
+      "foreground": "c98a7d99"
     },
     {
       "token": "support",
@@ -934,10 +928,6 @@
     {
       "token": "message.error",
       "foreground": "fdaeb7"
-    },
-    {
-      "token": "string",
-      "foreground": "dbd7caee"
     },
     {
       "token": "string variable",
