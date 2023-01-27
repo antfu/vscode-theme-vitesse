@@ -423,7 +423,7 @@
       }
     },
     {
-      "scope": "string source",
+      "scope": "string",
       "settings": {
         "foreground": "#dbd7caee"
       }
@@ -936,7 +936,7 @@
       "foreground": "fdaeb7"
     },
     {
-      "token": "string source",
+      "token": "string",
       "foreground": "dbd7caee"
     },
     {
