@@ -182,7 +182,8 @@
     "editorInlayHint.foreground": "#999999",
     "editorInlayHint.background": "#00000000",
     "editorStickyScroll.background": "#E7E5DB",
-    "editorStickyScrollHover.background": "#E7E5DB"
+    "editorStickyScrollHover.background": "#E7E5DB",
+    "menu.separatorBackground": "#E7E5DB"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
