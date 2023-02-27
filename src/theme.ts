@@ -256,6 +256,8 @@ export default function getTheme({ style, name, soft = false, black = false }) {
 
       'editorStickyScroll.background': activeBackground,
       'editorStickyScrollHover.background': activeBackground,
+
+      'menu.separatorBackground': border,
     },
     semanticHighlighting: true,
     semanticTokenColors: {
