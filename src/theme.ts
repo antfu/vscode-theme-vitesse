@@ -10,7 +10,9 @@ export default function getTheme({ style, name, soft = false, black = false }) {
 
   const primer = getColors(style)
 
-  const foreground = vitesse('foreground')
+  const foreground = black
+    ? '#dbd7cacc'
+    : vitesse('foreground')
   const secondaryForeground = vitesse('secondaryForeground')
   const activeForeground = vitesse('activeForeground')
   const primary = vitesse('primary')
@@ -28,6 +30,10 @@ export default function getTheme({ style, name, soft = false, black = false }) {
     : soft
       ? vitesse('lowActiveBackground')
       : vitesse('activeBackground')
+
+  const punctuation = black
+    ? vitesse('punctuation', 'cc')
+    : vitesse('punctuation')
 
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
@@ -251,7 +257,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'editorGutter.commentRangeForeground': vitesse('ignored'),
       'editorGutter.foldingControlForeground': vitesse('secondaryForeground'),
 
-      'editorInlayHint.foreground': vitesse('punctuation'),
+      'editorInlayHint.foreground': punctuation,
       'editorInlayHint.background': '#00000000',
 
       'editorStickyScroll.background': activeBackground,
@@ -286,7 +292,8 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'keyword.operator.rest',
           'keyword.operator.spread',
           'keyword.operator.type.annotation',
-          'keyword.operator.relational.ts',
+          'keyword.operator.relational',
+          'keyword.operator.assignment',
           'meta.brace',
           'meta.tag.block.any.html',
           'meta.tag.inline.any.html',
@@ -298,7 +305,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'punctuation',
         ],
         settings: {
-          foreground: vitesse('punctuation'),
+          foreground: punctuation,
         },
       },
       {
@@ -362,6 +369,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       },
       {
         scope: [
+          'text.html.derivative',
           'storage.modifier.package',
           'storage.modifier.import',
           'storage.type.java',
@@ -443,6 +451,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       {
         scope: [
           'keyword.operator',
+          'keyword.operator.assignment.compound',
           'meta.var.expr.ts',
         ],
         settings: {

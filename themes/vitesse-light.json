@@ -189,8 +189,8 @@
   "semanticTokenColors": {
     "namespace": "#b05a78",
     "property": "#998418",
-    "interface": "#2e8f82",
-    "type": "#2e8f82",
+    "interface": "#2e808f",
+    "type": "#2e808f",
     "class": "#5a6aa6"
   },
   "tokenColors": [
@@ -212,7 +212,8 @@
         "keyword.operator.rest",
         "keyword.operator.spread",
         "keyword.operator.type.annotation",
-        "keyword.operator.relational.ts",
+        "keyword.operator.relational",
+        "keyword.operator.assignment",
         "meta.brace",
         "meta.tag.block.any.html",
         "meta.tag.inline.any.html",
@@ -291,6 +292,7 @@
     },
     {
       "scope": [
+        "text.html.derivative",
         "storage.modifier.package",
         "storage.modifier.import",
         "storage.type.java"
@@ -360,7 +362,7 @@
         "entity.name.type"
       ],
       "settings": {
-        "foreground": "#2e808f"
+        "foreground": "#2e8f82"
       }
     },
     {
@@ -372,6 +374,7 @@
     {
       "scope": [
         "keyword.operator",
+        "keyword.operator.assignment.compound",
         "meta.var.expr.ts"
       ],
       "settings": {
@@ -512,7 +515,7 @@
     {
       "scope": "markup.quote",
       "settings": {
-        "foreground": "#2e8f82"
+        "foreground": "#2e808f"
       }
     },
     {
@@ -705,7 +708,11 @@
       "foreground": "999999"
     },
     {
-      "token": "keyword.operator.relational.ts",
+      "token": "keyword.operator.relational",
+      "foreground": "999999"
+    },
+    {
+      "token": "keyword.operator.assignment",
       "foreground": "999999"
     },
     {
@@ -813,6 +820,10 @@
       "foreground": "ab5959"
     },
     {
+      "token": "text.html.derivative",
+      "foreground": "393a34"
+    },
+    {
       "token": "storage.modifier.package",
       "foreground": "393a34"
     },
@@ -886,11 +897,11 @@
     },
     {
       "token": "support.type.primitive",
-      "foreground": "2e808f"
+      "foreground": "2e8f82"
     },
     {
       "token": "entity.name.type",
-      "foreground": "2e808f"
+      "foreground": "2e8f82"
     },
     {
       "token": "namespace",
@@ -898,6 +909,10 @@
     },
     {
       "token": "keyword.operator",
+      "foreground": "ab5959"
+    },
+    {
+      "token": "keyword.operator.assignment.compound",
       "foreground": "ab5959"
     },
     {
@@ -1002,7 +1017,7 @@
     },
     {
       "token": "markup.quote",
-      "foreground": "2e8f82"
+      "foreground": "2e808f"
     },
     {
       "token": "markup.italic",
