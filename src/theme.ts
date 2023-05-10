@@ -26,7 +26,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       ? vitesse('lowBackground')
       : vitesse('background')
   const activeBackground = black
-    ? '#050505'
+    ? '#121212'
     : soft
       ? vitesse('lowActiveBackground')
       : vitesse('activeBackground')
@@ -109,6 +109,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'list.activeSelectionBackground': activeBackground,
       'list.inactiveFocusBackground': background,
       'list.focusBackground': activeBackground,
+      'list.highlightForeground': primary,
 
       'tree.indentGuidesStroke': pick({ light: primer.gray[2], dark: primer.gray[1] }),
 
@@ -121,10 +122,11 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'notificationsWarningIcon.foreground': vitesse('orange'),
       'notificationsInfoIcon.foreground': vitesse('blue'),
 
-      'pickerGroup.border': primer.gray[2],
+      'pickerGroup.border': border,
       'pickerGroup.foreground': foreground,
       'quickInput.background': background,
       'quickInput.foreground': foreground,
+      'quickInputList.focusBackground': activeBackground,
 
       'statusBar.foreground': activeForeground,
       'statusBar.background': background,
@@ -299,6 +301,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'meta.tag.inline.any.html',
           'meta.tag.structure.input.void.html',
           'meta.type.annotation',
+          'meta.embedded.block.github-actions-expression',
           'storage.type.function.arrow',
           'keyword.operator.type',
           'meta.objectliteral.ts',
