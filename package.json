@@ -1,36 +1,33 @@
 {
+  "publisher": "antfu",
   "name": "theme-vitesse",
   "displayName": "Vitesse Theme",
   "version": "0.7.1",
-  "packageManager": "pnpm@7.5.0",
+  "packageManager": "pnpm@8.5.0",
   "description": "Vitesse theme for VS Code",
-  "categories": [
-    "Themes"
-  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antfu/vscode-theme-vitesse"
+  },
+  "bugs": {
+    "url": "https://github.com/antfu/vscode-theme-vitesse/issues"
+  },
   "keywords": [
     "theme",
     "vitesse",
     "light",
     "dark"
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/antfu/vscode-theme-vitesse"
-  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "icon.png",
   "files": [
     "themes"
   ],
-  "bugs": {
-    "url": "https://github.com/antfu/vscode-theme-vitesse/issues"
-  },
-  "publisher": "antfu",
-  "scripts": {
-    "build": "esno src/index.ts",
-    "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
-    "vscode:prepublish": "npm run build",
-    "lint": "eslint .",
-    "release": "npm run build && npx bumpp --commit --tag --push --all && vsce publish --no-dependencies"
+  "engines": {
+    "vscode": "^1.43.0"
   },
   "contributes": {
     "themes": [
@@ -61,22 +58,26 @@
       }
     ]
   },
+  "scripts": {
+    "build": "esno src/index.ts",
+    "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
+    "vscode:prepublish": "npm run build",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp --all && vsce publish --no-dependencies"
+  },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.19.4",
-    "@antfu/utils": "^0.5.0",
+    "@antfu/eslint-config": "^0.38.6",
+    "@antfu/utils": "^0.7.2",
     "@types/color": "^3.0.3",
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.16.7",
     "color": "^4.2.3",
-    "eslint": "^8.12.0",
-    "esno": "^0.14.1",
-    "nodemon": "^2.0.15",
-    "tsup": "^5.12.4",
-    "typescript": "^4.6.3",
-    "vsce": "^2.7.0"
+    "eslint": "^8.40.0",
+    "esno": "^0.16.3",
+    "nodemon": "^2.0.22",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4",
+    "vsce": "^2.15.0"
   },
-  "engines": {
-    "vscode": "^1.43.0"
-  },
-  "icon": "icon.png",
   "preview": true
 }

@@ -1,33 +1,41 @@
-name: Release
+name: Publish Package
 
 on:
   push:
     tags:
-      - 'v*'
+      - v*
 
 jobs:
-  release:
+  publish-npm:
+    permissions:
+      id-token: write
+      contents: write
+
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Use Node.js v18
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm i -g pnpm @antfu/ni
-      - run: nci
-      - run: npx conventional-github-releaser -p angular
+          cache: pnpm
+
+      - run: pnpm install
+
+      - run: npx changelogithub --no-group
+        continue-on-error: true
         env:
-          CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: yarn run build
-      - run: yarn publish --non-interactive
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      # - run: npx vsce publish -p ${{secrets.VSCE_TOKEN}}
-      #   env:
-      #     VSCE_TOKEN: ${{secrets.VSCE_TOKEN}}
-      # - run: npx ovsx publish -p ${{secrets.OVSX_TOKEN}}
-      #   env:
-      #     OVSX_TOKEN: ${{secrets.OVSX_TOKEN}}
+          NPM_CONFIG_PROVENANCE: true
