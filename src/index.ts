@@ -1,4 +1,5 @@
 import { promises as fs } from 'node:fs'
+import process from 'node:process'
 import getTheme from './theme'
 
 fs.mkdir('./themes', { recursive: true })

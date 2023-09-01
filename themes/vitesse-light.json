@@ -641,7 +641,8 @@
     },
     {
       "scope": [
-        "markup.underline.link.markdown"
+        "markup.underline.link.markdown",
+        "markup.underline.link.image.markdown"
       ],
       "settings": {
         "foreground": "#393a3490",
@@ -1140,6 +1141,10 @@
     },
     {
       "token": "markup.underline.link.markdown",
+      "foreground": "393a3490"
+    },
+    {
+      "token": "markup.underline.link.image.markdown",
       "foreground": "393a3490"
     },
     {
