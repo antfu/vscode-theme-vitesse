@@ -707,6 +707,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       {
         scope: [
           'markup.underline.link.markdown',
+          'markup.underline.link.image.markdown',
         ],
         settings: {
           foreground: secondaryForeground,
