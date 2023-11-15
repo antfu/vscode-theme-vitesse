@@ -26,7 +26,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       ? vitesse('lowBackground')
       : vitesse('background')
   const activeBackground = black
-    ? '#121212'
+    ? '#e6cc7722'
     : soft
       ? vitesse('lowActiveBackground')
       : vitesse('activeBackground')
@@ -35,9 +35,9 @@ export default function getTheme({ style, name, soft = false, black = false }) {
     ? vitesse('punctuation', 'cc')
     : vitesse('punctuation')
 
-  const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
-  const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
-  const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
+  const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#e6cc7744' })
+  const selectionBackgroundActive = pick({ light: '#22222215', dark: '#e6cc7722' })
+  const selectionBackground = pick({ light: '#22222215', dark: '#e6cc7722' })
 
   const theme = {
     name,
