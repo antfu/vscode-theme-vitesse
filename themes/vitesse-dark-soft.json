@@ -71,7 +71,7 @@
     "pickerGroup.foreground": "#dbd7caee",
     "quickInput.background": "#222",
     "quickInput.foreground": "#dbd7caee",
-    "quickInputList.focusBackground": "#292929",
+    "quickInputList.focusBackground": "#e6cc7744",
     "statusBar.foreground": "#bfbaaa",
     "statusBar.background": "#222",
     "statusBar.border": "#252525",
