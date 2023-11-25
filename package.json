@@ -27,6 +27,7 @@
   },
   "icon": "icon.png",
   "files": [
+    "extra",
     "themes"
   ],
   "engines": {
