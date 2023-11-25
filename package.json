@@ -22,6 +22,9 @@
   "categories": [
     "Themes"
   ],
+  "exports": {
+    "./*": "./*"
+  },
   "icon": "icon.png",
   "files": [
     "themes"
@@ -59,8 +62,8 @@
     ]
   },
   "scripts": {
-    "build": "esno src/index.ts",
-    "dev": "esno watch src/index.ts",
+    "build": "esno scripts/index.ts",
+    "dev": "esno watch scripts/index.ts",
     "vscode:prepublish": "npm run build",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
