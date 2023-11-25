@@ -67,4 +67,4 @@ export const VitesseThemes = {
   orange: ['#d4976c', '#a65e2b'],
   yellow: ['#e6cc77', '#bda437'],
   magenta: ['#d9739f', '#a13865'],
-}
+} satisfies Record<string, [string, string] | string>

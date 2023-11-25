@@ -725,7 +725,7 @@ export default function getTheme(options: GetThemeOptions) {
         },
       },
     ],
-    rules: [],
+    rules: [] as any[],
   }
 
   // monaco rules

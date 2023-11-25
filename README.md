@@ -28,7 +28,7 @@ Product Icons | <a href="https://github.com/antfu/vscode-icons-carbon">Carbon</a
 
 ## Links
 
-[prism-theme-vars](https://github.com/antfu/prism-theme-vars) - where the theme born.
+[prism-theme-vars](https://github.com/antfu/prism-theme-vars) - where the theme is born.
 
 [vitesse](https://github.com/antfu/vitesse) - what the theme was for.
 
