@@ -18,16 +18,27 @@ export const VitesseThemes = {
   foreground: ['#dbd7caee', '#393a34'],
   activeForeground: ['#bfbaaa', '#4e4f47'],
   secondaryForeground: ['#dedcd590', '#393a3490'],
+
   ignored: ['#dedcd550', '#393a3450'],
   faded: ['#dedcd510', '#393a3410'],
   border: ['#191919', '#f0f0f0'],
 
   background: ['#121212', '#ffffff'],
   activeBackground: ['#181818', '#f7f7f7'],
+  selectionBackground: ['#eeeeee15', '#22222215'],
+  selectionBackgroundActive: ['#eeeeee15', '#22222215'],
+  selectionBackgroundInActive: ['#eeeeee08', '#22222208'],
 
-  lowBackground: ['#222', '#F1F0E9'],
-  lowActiveBackground: ['#292929', '#E7E5DB'],
-  lowBorder: ['#252525', '#E7E5DB'],
+  // soft overrides
+  softBackground: ['#222', '#F1F0E9'],
+  softActiveBackground: ['#292929', '#E7E5DB'],
+  softBorder: ['#252525', '#E7E5DB'],
+
+  // black overrides
+  blackForeground: '#dbd7cacc',
+  blackBackground: '#000',
+  blackActiveBackground: '#121212',
+  blackPunctuation: '#444444',
 
   comment: ['#758575dd', '#a0ada0'],
   string: ['#c98a7d', '#b56959'],

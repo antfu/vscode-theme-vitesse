@@ -6,7 +6,7 @@ function toArray<T>(arr: T | T[]): T[] {
   return [arr]
 }
 
-export function getColors(style) {
+export function getColors(style: 'light' | 'dark'): typeof colors {
   if (style === 'dark') {
     /* The array of light to dark colors are reversed to auto-generate dark theme */
     const darkColors: any = {}

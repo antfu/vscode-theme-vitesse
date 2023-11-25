@@ -1,46 +1,80 @@
-import { promises as fs } from 'node:fs'
 import process from 'node:process'
+import fs from 'fs-extra'
 import getTheme from './theme'
+import { getXtermTheme } from './extra'
 
 fs.mkdir('./themes', { recursive: true })
   .then(() => Promise.all([
-    fs.writeFile(
+    fs.writeJSON(
       './themes/vitesse-light.json',
-      `${JSON.stringify(getTheme({
-        style: 'light',
+      getTheme({
+        color: 'light',
         name: 'Vitesse Light',
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/vitesse-dark.json',
-      `${JSON.stringify(getTheme({
-        style: 'dark',
+      getTheme({
+        color: 'dark',
         name: 'Vitesse Dark',
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/vitesse-black.json',
-      `${JSON.stringify(getTheme({
-        style: 'dark',
+      getTheme({
+        color: 'dark',
         name: 'Vitesse Black',
         black: true,
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/vitesse-light-soft.json',
-      `${JSON.stringify(getTheme({
-        style: 'light',
+      getTheme({
+        color: 'light',
         name: 'Vitesse Light Soft',
         soft: true,
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/vitesse-dark-soft.json',
-      `${JSON.stringify(getTheme({
-        style: 'dark',
+      getTheme({
+        color: 'dark',
         name: 'Vitesse Dark Soft',
         soft: true,
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
   ]))
-  .catch(() => process.exit(1))
+
+fs.mkdir('./extra', { recursive: true })
+  .then(() => Promise.all([
+    fs.writeJSON(
+      './extra/xterm-vitesse-light.json',
+      getXtermTheme({
+        color: 'light',
+        name: 'Vitesse Light',
+      }),
+      { spaces: 2 },
+    ),
+    fs.writeJSON(
+      './extra/xterm-vitesse-dark.json',
+      getXtermTheme({
+        color: 'dark',
+        name: 'Vitesse Dark',
+      }),
+      { spaces: 2 },
+    ),
+    fs.writeJSON(
+      './extra/xterm-vitesse-black.json',
+      getXtermTheme({
+        color: 'dark',
+        name: 'Vitesse Black',
+        black: true,
+      }),
+      { spaces: 2 },
+    ),
+  ]))

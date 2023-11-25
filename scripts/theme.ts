@@ -1,67 +1,53 @@
 import { toArray } from '@antfu/utils'
-import { getColors } from './primer'
 import { VitesseThemes } from './colors'
+import type { GetThemeOptions } from './helper'
+import { createThemeHelpers } from './helper'
 
-export default function getTheme({ style, name, soft = false, black = false }) {
-  // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
-  const pick = options => options[style]
+export default function getTheme(options: GetThemeOptions) {
+  const {
+    pick,
+    v,
+    colors,
+  } = createThemeHelpers(options)
 
-  const vitesse = (key: keyof typeof VitesseThemes, op = '') => pick({ light: VitesseThemes[key][1] + op, dark: VitesseThemes[key][0] + op })
+  const foreground = v('foreground')
+  const secondaryForeground = v('secondaryForeground')
+  const activeForeground = v('activeForeground')
+  const primary = v('primary')
 
-  const primer = getColors(style)
+  const border = v('border')
+  const background = v('background')
+  const activeBackground = v('activeBackground')
 
-  const foreground = black
-    ? '#dbd7cacc'
-    : vitesse('foreground')
-  const secondaryForeground = vitesse('secondaryForeground')
-  const activeForeground = vitesse('activeForeground')
-  const primary = vitesse('primary')
+  const punctuation = v('punctuation')
 
-  const border = soft
-    ? vitesse('lowBorder')
-    : vitesse('border')
-  const background = black
-    ? '#000'
-    : soft
-      ? vitesse('lowBackground')
-      : vitesse('background')
-  const activeBackground = black
-    ? '#121212'
-    : soft
-      ? vitesse('lowActiveBackground')
-      : vitesse('activeBackground')
-
-  const punctuation = black
-    ? vitesse('punctuation', 'cc')
-    : vitesse('punctuation')
-
-  const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
-  const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
-  const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
+  const selectionBackground = v('selectionBackground')
+  const selectionBackgroundActive = v('selectionBackgroundActive')
+  const selectionBackgroundInActive = v('selectionBackgroundInActive')
 
   const theme = {
-    name,
+    name: options.name,
     base: pick({ light: 'vs', dark: 'vs-dark' }),
     colors: {
       'focusBorder': '#00000000',
       foreground,
       'descriptionForeground': secondaryForeground,
-      'errorForeground': vitesse('red'),
+      'errorForeground': v('red'),
 
       'textLink.foreground': primary,
       'textLink.activeForeground': primary,
       'textBlockQuote.background': background,
       'textBlockQuote.border': border,
       'textCodeBlock.background': background,
-      'textPreformat.foreground': primer.gray[6],
-      'textSeparator.foreground': primer.gray[3],
+      'textPreformat.foreground': colors.gray[6],
+      'textSeparator.foreground': colors.gray[3],
 
       'button.background': primary,
       'button.foreground': background,
       'button.hoverBackground': primary,
 
       'checkbox.background': activeBackground,
-      'checkbox.border': pick({ light: primer.gray[3], dark: primer.gray[1] }),
+      'checkbox.border': pick({ light: colors.gray[3], dark: colors.gray[1] }),
 
       'dropdown.background': background,
       'dropdown.border': border,
@@ -72,7 +58,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'input.border': border,
       'input.foreground': foreground,
       'input.placeholderForeground': secondaryForeground,
-      'inputOption.activeBackground': vitesse('ignored'),
+      'inputOption.activeBackground': v('ignored'),
 
       'badge.foreground': background,
       'badge.background': secondaryForeground,
@@ -81,12 +67,12 @@ export default function getTheme({ style, name, soft = false, black = false }) {
 
       'titleBar.activeForeground': activeForeground,
       'titleBar.activeBackground': background,
-      'titleBar.inactiveForeground': primer.gray[5],
+      'titleBar.inactiveForeground': colors.gray[5],
       'titleBar.inactiveBackground': background,
       'titleBar.border': activeBackground,
 
       'activityBar.foreground': foreground,
-      'activityBar.inactiveForeground': vitesse('ignored'),
+      'activityBar.inactiveForeground': v('ignored'),
       'activityBar.background': background,
       'activityBarBadge.foreground': background,
       'activityBarBadge.background': activeForeground,
@@ -111,16 +97,16 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'list.focusBackground': activeBackground,
       'list.highlightForeground': primary,
 
-      'tree.indentGuidesStroke': pick({ light: primer.gray[2], dark: primer.gray[1] }),
+      'tree.indentGuidesStroke': pick({ light: colors.gray[2], dark: colors.gray[1] }),
 
-      'notificationCenterHeader.foreground': primer.gray[5],
+      'notificationCenterHeader.foreground': colors.gray[5],
       'notificationCenterHeader.background': background,
       'notifications.foreground': foreground,
       'notifications.background': background,
       'notifications.border': border,
-      'notificationsErrorIcon.foreground': vitesse('red'),
-      'notificationsWarningIcon.foreground': vitesse('orange'),
-      'notificationsInfoIcon.foreground': vitesse('blue'),
+      'notificationsErrorIcon.foreground': v('red'),
+      'notificationsWarningIcon.foreground': v('orange'),
+      'notificationsInfoIcon.foreground': v('blue'),
 
       'pickerGroup.border': border,
       'pickerGroup.foreground': foreground,
@@ -141,7 +127,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'editorGroup.border': border,
 
       'tab.activeForeground': foreground,
-      'tab.inactiveForeground': primer.gray[5],
+      'tab.inactiveForeground': colors.gray[5],
       'tab.inactiveBackground': background,
       'tab.activeBackground': background,
       'tab.hoverBackground': activeBackground,
@@ -152,7 +138,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'tab.unfocusedActiveBorder': border,
       'tab.activeBorderTop': secondaryForeground,
 
-      'breadcrumb.foreground': primer.gray[5],
+      'breadcrumb.foreground': colors.gray[5],
       'breadcrumb.focusForeground': foreground,
       'breadcrumb.background': activeBackground,
       'breadcrumb.activeSelectionForeground': selectionBackgroundActive,
@@ -163,7 +149,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'editorWidget.background': background,
       'editor.foldBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
       'editor.lineHighlightBackground': activeBackground,
-      'editorLineNumber.foreground': vitesse('ignored'),
+      'editorLineNumber.foreground': v('ignored'),
       'editorLineNumber.activeForeground': activeForeground,
       'editorIndentGuide.background': pick({ light: '#00000015', dark: '#ffffff15' }),
       'editorIndentGuide.activeBackground': pick({ light: '#00000030', dark: '#ffffff30' }),
@@ -183,81 +169,81 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       'diffEditor.removedTextBackground': pick({ light: '#ab595910', dark: '#ab595922' }),
 
       'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0000' }),
-      'scrollbarSlider.background': vitesse('faded'),
-      'scrollbarSlider.hoverBackground': vitesse('ignored'),
-      'scrollbarSlider.activeBackground': vitesse('ignored'),
-      'editorOverviewRuler.border': primer.white,
+      'scrollbarSlider.background': v('faded'),
+      'scrollbarSlider.hoverBackground': v('ignored'),
+      'scrollbarSlider.activeBackground': v('ignored'),
+      'editorOverviewRuler.border': colors.white,
 
       'panel.background': background,
       'panel.border': border,
       'panelTitle.activeBorder': primary,
       'panelTitle.activeForeground': foreground,
-      'panelTitle.inactiveForeground': primer.gray[5],
-      'panelInput.border': pick({ light: primer.gray[2], dark: primer.gray[1] }),
+      'panelTitle.inactiveForeground': colors.gray[5],
+      'panelInput.border': pick({ light: colors.gray[2], dark: colors.gray[1] }),
 
       'terminal.foreground': foreground,
       'terminal.selectionBackground': selectionBackground,
       'terminal.ansiBrightBlack': pick({ light: '#aaaaaa', dark: '#777777' }),
-      'terminal.ansiBrightBlue': vitesse('blue'),
-      'terminal.ansiBrightCyan': vitesse('cyan'),
-      'terminal.ansiBrightGreen': vitesse('green'),
-      'terminal.ansiBrightMagenta': vitesse('magenta'),
-      'terminal.ansiBrightRed': vitesse('red'),
+      'terminal.ansiBrightBlue': v('blue'),
+      'terminal.ansiBrightCyan': v('cyan'),
+      'terminal.ansiBrightGreen': v('green'),
+      'terminal.ansiBrightMagenta': v('magenta'),
+      'terminal.ansiBrightRed': v('red'),
       'terminal.ansiBrightWhite': pick({ light: '#dddddd', dark: '#ffffff' }),
-      'terminal.ansiBrightYellow': vitesse('yellow'),
+      'terminal.ansiBrightYellow': v('yellow'),
       'terminal.ansiBlack': pick({ light: VitesseThemes.background[0], dark: VitesseThemes.foreground[1] }),
-      'terminal.ansiBlue': vitesse('blue'),
-      'terminal.ansiCyan': vitesse('cyan'),
-      'terminal.ansiGreen': vitesse('green'),
-      'terminal.ansiMagenta': vitesse('magenta'),
-      'terminal.ansiRed': vitesse('red'),
+      'terminal.ansiBlue': v('blue'),
+      'terminal.ansiCyan': v('cyan'),
+      'terminal.ansiGreen': v('green'),
+      'terminal.ansiMagenta': v('magenta'),
+      'terminal.ansiRed': v('red'),
       'terminal.ansiWhite': pick({ light: VitesseThemes.foreground[0], dark: VitesseThemes.foreground[0] }),
-      'terminal.ansiYellow': vitesse('yellow'),
+      'terminal.ansiYellow': v('yellow'),
 
-      'gitDecoration.addedResourceForeground': vitesse('green'),
-      'gitDecoration.modifiedResourceForeground': vitesse('blue'),
-      'gitDecoration.deletedResourceForeground': vitesse('red'),
-      'gitDecoration.untrackedResourceForeground': vitesse('cyan'),
-      'gitDecoration.ignoredResourceForeground': vitesse('ignored'),
-      'gitDecoration.conflictingResourceForeground': vitesse('orange'),
-      'gitDecoration.submoduleResourceForeground': vitesse('secondaryForeground'),
+      'gitDecoration.addedResourceForeground': v('green'),
+      'gitDecoration.modifiedResourceForeground': v('blue'),
+      'gitDecoration.deletedResourceForeground': v('red'),
+      'gitDecoration.untrackedResourceForeground': v('cyan'),
+      'gitDecoration.ignoredResourceForeground': v('ignored'),
+      'gitDecoration.conflictingResourceForeground': v('orange'),
+      'gitDecoration.submoduleResourceForeground': v('secondaryForeground'),
 
-      'editorGutter.modifiedBackground': vitesse('blue'),
-      'editorGutter.addedBackground': vitesse('green'),
-      'editorGutter.deletedBackground': vitesse('red'),
+      'editorGutter.modifiedBackground': v('blue'),
+      'editorGutter.addedBackground': v('green'),
+      'editorGutter.deletedBackground': v('red'),
 
-      'editorBracketHighlight.foreground1': vitesse('cyan'),
-      'editorBracketHighlight.foreground2': vitesse('green'),
-      'editorBracketHighlight.foreground3': vitesse('orange'),
-      'editorBracketHighlight.foreground4': vitesse('magenta'),
-      'editorBracketHighlight.foreground5': vitesse('yellow'),
-      'editorBracketHighlight.foreground6': vitesse('blue'),
+      'editorBracketHighlight.foreground1': v('cyan'),
+      'editorBracketHighlight.foreground2': v('green'),
+      'editorBracketHighlight.foreground3': v('orange'),
+      'editorBracketHighlight.foreground4': v('magenta'),
+      'editorBracketHighlight.foreground5': v('yellow'),
+      'editorBracketHighlight.foreground6': v('blue'),
 
       'debugToolBar.background': background,
-      'editor.stackFrameHighlightBackground': pick({ light: primer.yellow[1], dark: '#a707' }),
-      'editor.focusedStackFrameHighlightBackground': pick({ light: primer.yellow[2], dark: '#b808' }),
+      'editor.stackFrameHighlightBackground': pick({ light: colors.yellow[1], dark: '#a707' }),
+      'editor.focusedStackFrameHighlightBackground': pick({ light: colors.yellow[2], dark: '#b808' }),
 
-      'peekViewEditor.matchHighlightBackground': pick({ dark: '#ffd33d33' }),
-      'peekViewResult.matchHighlightBackground': pick({ dark: '#ffd33d33' }),
+      'peekViewEditor.matchHighlightBackground': pick({ dark: '#ffd33d33', light: undefined }),
+      'peekViewResult.matchHighlightBackground': pick({ dark: '#ffd33d33', light: undefined }),
       'peekViewEditor.background': background,
       'peekViewResult.background': background,
 
       'settings.headerForeground': foreground,
       'settings.modifiedItemIndicator': primary,
-      'welcomePage.buttonBackground': primer.gray[1],
-      'welcomePage.buttonHoverBackground': primer.gray[2],
+      'welcomePage.buttonBackground': colors.gray[1],
+      'welcomePage.buttonHoverBackground': colors.gray[2],
 
-      'problemsErrorIcon.foreground': vitesse('red'),
-      'problemsWarningIcon.foreground': vitesse('orange'),
-      'problemsInfoIcon.foreground': vitesse('blue'),
+      'problemsErrorIcon.foreground': v('red'),
+      'problemsWarningIcon.foreground': v('orange'),
+      'problemsInfoIcon.foreground': v('blue'),
 
-      'editorError.foreground': vitesse('red'),
-      'editorWarning.foreground': vitesse('orange'),
-      'editorInfo.foreground': vitesse('blue'),
-      'editorHint.foreground': vitesse('green'),
+      'editorError.foreground': v('red'),
+      'editorWarning.foreground': v('orange'),
+      'editorInfo.foreground': v('blue'),
+      'editorHint.foreground': v('green'),
 
-      'editorGutter.commentRangeForeground': vitesse('ignored'),
-      'editorGutter.foldingControlForeground': vitesse('secondaryForeground'),
+      'editorGutter.commentRangeForeground': v('ignored'),
+      'editorGutter.foldingControlForeground': v('secondaryForeground'),
 
       'editorInlayHint.foreground': punctuation,
       'editorInlayHint.background': '#00000000',
@@ -269,11 +255,11 @@ export default function getTheme({ style, name, soft = false, black = false }) {
     },
     semanticHighlighting: true,
     semanticTokenColors: {
-      namespace: vitesse('namespace'),
-      property: vitesse('property'),
-      interface: vitesse('interface'),
-      type: vitesse('interface'),
-      class: vitesse('class'),
+      namespace: v('namespace'),
+      property: v('property'),
+      interface: v('interface'),
+      type: v('interface'),
+      class: v('class'),
     },
     tokenColors: [
       {
@@ -283,7 +269,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'string.comment',
         ],
         settings: {
-          foreground: vitesse('comment'),
+          foreground: v('comment'),
         },
       },
       {
@@ -319,13 +305,13 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'meta.definition.variable',
         ],
         settings: {
-          foreground: vitesse('constant'),
+          foreground: v('constant'),
         },
       },
       {
         scope: ['entity', 'entity.name'],
         settings: {
-          foreground: vitesse('function'),
+          foreground: v('function'),
         },
       },
       {
@@ -340,13 +326,13 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'tag.html',
         ],
         settings: {
-          foreground: vitesse('keyword'),
+          foreground: v('keyword'),
         },
       },
       {
         scope: 'entity.name.function',
         settings: {
-          foreground: vitesse('function'),
+          foreground: v('function'),
         },
       },
       {
@@ -355,7 +341,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'storage.type.class.jsdoc',
         ],
         settings: {
-          foreground: vitesse('keyword'),
+          foreground: v('keyword'),
         },
       },
       {
@@ -367,7 +353,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'constant.language.null',
         ],
         settings: {
-          foreground: vitesse('builtin'),
+          foreground: v('builtin'),
         },
       },
       {
@@ -388,7 +374,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'attribute.value',
         ],
         settings: {
-          foreground: vitesse('string'),
+          foreground: v('string'),
         },
       },
       {
@@ -397,13 +383,13 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'punctuation.support.type.property-name',
         ],
         settings: {
-          foreground: vitesse('string', '99'),
+          foreground: v('string', '99'),
         },
       },
       {
         scope: 'support',
         settings: {
-          foreground: vitesse('property'),
+          foreground: v('property'),
         },
       },
       {
@@ -415,7 +401,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'attribute.name',
         ],
         settings: {
-          foreground: vitesse('property'),
+          foreground: v('property'),
         },
       },
       {
@@ -424,7 +410,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'invalid.deprecated.entity.other.attribute-name.html',
         ],
         settings: {
-          foreground: vitesse('variable'),
+          foreground: v('variable'),
         },
       },
       {
@@ -433,7 +419,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'identifier',
         ],
         settings: {
-          foreground: vitesse('variable'),
+          foreground: v('variable'),
         },
       },
       {
@@ -442,13 +428,13 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'entity.name.type',
         ],
         settings: {
-          foreground: vitesse('type'),
+          foreground: v('type'),
         },
       },
       {
         scope: 'namespace',
         settings: {
-          foreground: vitesse('namespace'),
+          foreground: v('namespace'),
         },
       },
       {
@@ -458,62 +444,62 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'meta.var.expr.ts',
         ],
         settings: {
-          foreground: vitesse('operator'),
+          foreground: v('operator'),
         },
       },
       {
         scope: 'invalid.broken',
         settings: {
           fontStyle: 'italic',
-          foreground: primer.red[7],
+          foreground: colors.red[7],
         },
       },
       {
         scope: 'invalid.deprecated',
         settings: {
           fontStyle: 'italic',
-          foreground: primer.red[7],
+          foreground: colors.red[7],
         },
       },
       {
         scope: 'invalid.illegal',
         settings: {
           fontStyle: 'italic',
-          foreground: primer.red[7],
+          foreground: colors.red[7],
         },
       },
       {
         scope: 'invalid.unimplemented',
         settings: {
           fontStyle: 'italic',
-          foreground: primer.red[7],
+          foreground: colors.red[7],
         },
       },
       {
         scope: 'carriage-return',
         settings: {
           fontStyle: 'italic underline',
-          background: pick({ light: primer.red[5], dark: primer.red[6] }),
-          foreground: primer.gray[0],
+          background: pick({ light: colors.red[5], dark: colors.red[6] }),
+          foreground: colors.gray[0],
           content: '^M',
         },
       },
       {
         scope: 'message.error',
         settings: {
-          foreground: primer.red[7],
+          foreground: colors.red[7],
         },
       },
       {
         scope: 'string variable',
         settings: {
-          foreground: vitesse('string'),
+          foreground: v('string'),
         },
       },
       {
         scope: ['source.regexp', 'string.regexp'],
         settings: {
-          foreground: vitesse('regex'),
+          foreground: v('regex'),
         },
       },
       {
@@ -524,13 +510,13 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'string.regexp string.regexp.arbitrary-repitition',
         ],
         settings: {
-          foreground: vitesse('string'),
+          foreground: v('string'),
         },
       },
       {
         scope: 'string.regexp constant.character.escape',
         settings: {
-          foreground: vitesse('yellow'),
+          foreground: v('yellow'),
         },
       },
       {
@@ -538,7 +524,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'support.constant',
         ],
         settings: {
-          foreground: vitesse('constant'),
+          foreground: v('constant'),
         },
       },
       {
@@ -547,7 +533,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'number',
         ],
         settings: {
-          foreground: vitesse('number'),
+          foreground: v('number'),
         },
       },
       {
@@ -555,7 +541,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'keyword.other.unit',
         ],
         settings: {
-          foreground: vitesse('builtin'),
+          foreground: v('builtin'),
         },
       },
       {
@@ -564,7 +550,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'constant.language',
         ],
         settings: {
-          foreground: vitesse('boolean'),
+          foreground: v('boolean'),
         },
       },
       {
@@ -576,7 +562,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       {
         scope: 'punctuation.definition.list.begin.markdown',
         settings: {
-          foreground: vitesse('orange'),
+          foreground: v('orange'),
         },
       },
       {
@@ -589,7 +575,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
       {
         scope: 'markup.quote',
         settings: {
-          foreground: vitesse('interface'),
+          foreground: v('interface'),
         },
       },
       {
@@ -619,8 +605,8 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'punctuation.definition.deleted',
         ],
         settings: {
-          background: primer.red[0],
-          foreground: primer.red[7],
+          background: colors.red[0],
+          foreground: colors.red[7],
         },
       },
       {
@@ -630,48 +616,48 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'punctuation.definition.inserted',
         ],
         settings: {
-          background: primer.green[0],
-          foreground: primer.green[6],
+          background: colors.green[0],
+          foreground: colors.green[6],
         },
       },
       {
         scope: ['markup.changed', 'punctuation.definition.changed'],
         settings: {
-          background: primer.orange[1],
-          foreground: primer.orange[6],
+          background: colors.orange[1],
+          foreground: colors.orange[6],
         },
       },
       {
         scope: ['markup.ignored', 'markup.untracked'],
         settings: {
-          foreground: primer.gray[1],
-          background: primer.blue[6],
+          foreground: colors.gray[1],
+          background: colors.blue[6],
         },
       },
       {
         scope: 'meta.diff.range',
         settings: {
-          foreground: pick({ light: primer.purple[5], dark: primer.purple[6] }),
+          foreground: pick({ light: colors.purple[5], dark: colors.purple[6] }),
           fontStyle: 'bold',
         },
       },
       {
         scope: 'meta.diff.header',
         settings: {
-          foreground: primer.blue[6],
+          foreground: colors.blue[6],
         },
       },
       {
         scope: 'meta.separator',
         settings: {
           fontStyle: 'bold',
-          foreground: primer.blue[6],
+          foreground: colors.blue[6],
         },
       },
       {
         scope: 'meta.output',
         settings: {
-          foreground: primer.blue[6],
+          foreground: colors.blue[6],
         },
       },
       {
@@ -684,13 +670,13 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'brackethighlighter.quote',
         ],
         settings: {
-          foreground: primer.gray[6],
+          foreground: colors.gray[6],
         },
       },
       {
         scope: 'brackethighlighter.unmatched',
         settings: {
-          foreground: primer.red[7],
+          foreground: colors.red[7],
         },
       },
       {
@@ -701,7 +687,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'punctuation.definition.string.end.markdown',
         ],
         settings: {
-          foreground: vitesse('string'),
+          foreground: v('string'),
         },
       },
       {
@@ -719,7 +705,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'type.identifier',
         ],
         settings: {
-          foreground: vitesse('class'),
+          foreground: v('class'),
         },
       },
       {
@@ -727,7 +713,7 @@ export default function getTheme({ style, name, soft = false, black = false }) {
           'entity.other.attribute-name.html.vue',
         ],
         settings: {
-          foreground: vitesse('function'),
+          foreground: v('function'),
         },
       },
       {

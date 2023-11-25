@@ -183,7 +183,7 @@
     "editorHint.foreground": "#4d9375",
     "editorGutter.commentRangeForeground": "#dedcd550",
     "editorGutter.foldingControlForeground": "#dedcd590",
-    "editorInlayHint.foreground": "#666666cc",
+    "editorInlayHint.foreground": "#444444",
     "editorInlayHint.background": "#00000000",
     "editorStickyScroll.background": "#121212",
     "editorStickyScrollHover.background": "#121212",
@@ -230,7 +230,7 @@
         "punctuation"
       ],
       "settings": {
-        "foreground": "#666666cc"
+        "foreground": "#444444"
       }
     },
     {
@@ -691,75 +691,75 @@
     },
     {
       "token": "delimiter.bracket",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "delimiter",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "invalid.illegal.character-not-allowed-here.html",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "keyword.operator.rest",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "keyword.operator.spread",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "keyword.operator.type.annotation",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "keyword.operator.relational",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "keyword.operator.assignment",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.brace",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.tag.block.any.html",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.tag.inline.any.html",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.tag.structure.input.void.html",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.type.annotation",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.embedded.block.github-actions-expression",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "storage.type.function.arrow",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "keyword.operator.type",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "meta.objectliteral.ts",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "punctuation",
-      "foreground": "666666cc"
+      "foreground": "444444"
     },
     {
       "token": "constant",
