@@ -56,7 +56,7 @@
     "list.inactiveSelectionBackground": "#292929",
     "list.activeSelectionBackground": "#292929",
     "list.inactiveFocusBackground": "#222",
-    "list.focusBackground": "#292929",
+    "list.focusBackground": "#222",
     "list.highlightForeground": "#4d9375",
     "tree.indentGuidesStroke": "#2f363d",
     "notificationCenterHeader.foreground": "#959da5",
