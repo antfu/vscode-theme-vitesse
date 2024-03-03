@@ -1,4 +1,3 @@
-import process from 'node:process'
 import fs from 'fs-extra'
 import getTheme from './theme'
 import { getXtermTheme } from './extra'
