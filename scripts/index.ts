@@ -2,6 +2,8 @@ import fs from 'fs-extra'
 import getTheme from './theme'
 import { getXtermTheme } from './extra'
 
+console.log('starting')
+
 fs.mkdir('./themes', { recursive: true })
   .then(() => Promise.all([
     fs.writeJSON(
@@ -77,3 +79,5 @@ fs.mkdir('./extra', { recursive: true })
       { spaces: 2 },
     ),
   ]))
+
+console.log('finished')

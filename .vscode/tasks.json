@@ -18,7 +18,7 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": "starting",
-          "endsPattern": "clean exit"
+          "endsPattern": "finished"
         }
       },
       "label": "npm: dev"
