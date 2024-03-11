@@ -145,7 +145,7 @@
     "terminal.ansiGreen": "#4d9375",
     "terminal.ansiMagenta": "#d9739f",
     "terminal.ansiRed": "#cb7676",
-    "terminal.ansiWhite": "#dbd7caee",
+    "terminal.ansiWhite": "#dbd7ca",
     "terminal.ansiYellow": "#e6cc77",
     "gitDecoration.addedResourceForeground": "#4d9375",
     "gitDecoration.modifiedResourceForeground": "#6394bf",

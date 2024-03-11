@@ -197,7 +197,7 @@ export default function getTheme(options: GetThemeOptions) {
       'terminal.ansiGreen': v('green'),
       'terminal.ansiMagenta': v('magenta'),
       'terminal.ansiRed': v('red'),
-      'terminal.ansiWhite': pick({ light: VitesseThemes.foreground[0], dark: VitesseThemes.foreground[0] }),
+      'terminal.ansiWhite': '#dbd7ca',
       'terminal.ansiYellow': v('yellow'),
 
       'gitDecoration.addedResourceForeground': v('green'),

@@ -71,19 +71,19 @@
     "release": "bumpp --all && vsce publish --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.7.0",
+    "@antfu/eslint-config": "^2.8.0",
     "@antfu/utils": "^0.7.7",
     "@types/color": "^3.0.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.25",
     "@vscode/vsce": "^2.24.0",
-    "bumpp": "^9.3.1",
+    "bumpp": "^9.4.0",
     "color": "^4.2.3",
     "eslint": "^8.57.0",
     "esno": "^4.7.0",
     "fs-extra": "^11.2.0",
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "xterm": "^5.3.0"
   },
   "preview": true
