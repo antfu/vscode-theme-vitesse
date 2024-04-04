@@ -94,7 +94,7 @@ export default function getTheme(options: GetThemeOptions) {
       'list.inactiveSelectionBackground': activeBackground,
       'list.activeSelectionBackground': activeBackground,
       'list.inactiveFocusBackground': background,
-      'list.focusBackground': background,
+      'list.focusBackground': activeBackground,
       'list.highlightForeground': primary,
 
       'tree.indentGuidesStroke': pick({ light: colors.gray[2], dark: colors.gray[1] }),
