@@ -165,8 +165,8 @@ export default function getTheme(options: GetThemeOptions) {
       'editor.wordHighlightStrongBackground': pick({ light: '#1c6b4810', dark: '#1c6b4810' }),
       'editorBracketMatch.background': pick({ light: '#1c6b4820', dark: '#4d937520' }),
 
-      'diffEditor.insertedTextBackground': pick({ light: '#1c6b4815', dark: '#4d937522' }),
-      'diffEditor.removedTextBackground': pick({ light: '#ab595910', dark: '#ab595922' }),
+      'diffEditor.insertedTextBackground': pick({ light: '#1c6b4830', dark: '#4d937550' }),
+      'diffEditor.removedTextBackground': pick({ light: '#ab595940', dark: '#ab595950' }),
 
       'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0000' }),
       'scrollbarSlider.background': v('faded'),
