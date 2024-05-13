@@ -282,6 +282,7 @@ export default function getTheme(options: GetThemeOptions) {
           'keyword.operator.type.annotation',
           'keyword.operator.relational',
           'keyword.operator.assignment',
+          'keyword.operator.type',
           'meta.brace',
           'meta.tag.block.any.html',
           'meta.tag.inline.any.html',
@@ -289,7 +290,6 @@ export default function getTheme(options: GetThemeOptions) {
           'meta.type.annotation',
           'meta.embedded.block.github-actions-expression',
           'storage.type.function.arrow',
-          'keyword.operator.type',
           'meta.objectliteral.ts',
           'punctuation',
         ],
@@ -497,7 +497,10 @@ export default function getTheme(options: GetThemeOptions) {
         },
       },
       {
-        scope: ['source.regexp', 'string.regexp'],
+        scope: [
+          'source.regexp',
+          'string.regexp',
+        ],
         settings: {
           foreground: v('regex'),
         },
@@ -529,6 +532,7 @@ export default function getTheme(options: GetThemeOptions) {
       },
       {
         scope: [
+          'keyword.operator.quantifier.regexp',
           'constant.numeric',
           'number',
         ],
@@ -703,6 +707,7 @@ export default function getTheme(options: GetThemeOptions) {
       {
         scope: [
           'type.identifier',
+          'constant.other.character-class.regexp',
         ],
         settings: {
           foreground: v('class'),

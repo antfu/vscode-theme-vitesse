@@ -49,7 +49,7 @@ export const VitesseThemes = {
   operator: ['#cb7676', '#ab5959'],
   function: ['#80a665', '#59873a'],
   constant: ['#c99076', '#a65e2b'],
-  class: ['#7f8ac7', '#5a6aa6'],
+  class: ['#6872ab', '#5a6aa6'],
   interface: ['#5d99a9', '#2e808f'],
   type: ['#5DA994', '#2e8f82'],
   builtin: ['#cb7676', '#ab5959'],
