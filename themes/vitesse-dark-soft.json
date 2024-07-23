@@ -279,7 +279,8 @@
     {
       "scope": [
         "keyword",
-        "storage.type.class.jsdoc"
+        "storage.type.class.jsdoc",
+        "punctuation.definition.template-expression"
       ],
       "settings": {
         "foreground": "#4d9375"
@@ -827,6 +828,10 @@
     },
     {
       "token": "storage.type.class.jsdoc",
+      "foreground": "4d9375"
+    },
+    {
+      "token": "punctuation.definition.template-expression",
       "foreground": "4d9375"
     },
     {

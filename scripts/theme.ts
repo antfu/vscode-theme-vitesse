@@ -341,6 +341,7 @@ export default function getTheme(options: GetThemeOptions) {
         scope: [
           'keyword',
           'storage.type.class.jsdoc',
+          'punctuation.definition.template-expression',
         ],
         settings: {
           foreground: v('keyword'),
