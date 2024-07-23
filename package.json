@@ -2,7 +2,7 @@
   "publisher": "antfu",
   "name": "theme-vitesse",
   "displayName": "Vitesse Theme",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "packageManager": "pnpm@9.1.1",
   "description": "Vitesse theme for VS Code",
   "license": "MIT",
