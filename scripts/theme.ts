@@ -292,6 +292,8 @@ export default function getTheme(options: GetThemeOptions) {
           'storage.type.function.arrow',
           'meta.objectliteral.ts',
           'punctuation',
+          'punctuation.definition.string.begin.html.vue',
+          'punctuation.definition.string.end.html.vue',
         ],
         settings: {
           foreground: punctuation,
@@ -351,6 +353,7 @@ export default function getTheme(options: GetThemeOptions) {
           'support.type.builtin',
           'constant.language.undefined',
           'constant.language.null',
+          'constant.language.import-export-all.ts',
         ],
         settings: {
           foreground: v('builtin'),
@@ -380,10 +383,17 @@ export default function getTheme(options: GetThemeOptions) {
       {
         scope: [
           'punctuation.definition.string',
+        ],
+        settings: {
+          foreground: v('string', '77'),
+        },
+      },
+      {
+        scope: [
           'punctuation.support.type.property-name',
         ],
         settings: {
-          foreground: v('string', '99'),
+          foreground: v('property', '77'),
         },
       },
       {
