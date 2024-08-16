@@ -246,7 +246,7 @@ export default function getTheme(options: GetThemeOptions) {
       'editorGutter.foldingControlForeground': v('secondaryForeground'),
 
       'editorInlayHint.foreground': punctuation,
-      'editorInlayHint.background': '#00000000',
+      'editorInlayHint.background': activeBackground,
 
       'editorStickyScroll.background': activeBackground,
       'editorStickyScrollHover.background': activeBackground,

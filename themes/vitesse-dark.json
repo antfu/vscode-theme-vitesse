@@ -184,7 +184,7 @@
     "editorGutter.commentRangeForeground": "#dedcd550",
     "editorGutter.foldingControlForeground": "#dedcd590",
     "editorInlayHint.foreground": "#666666",
-    "editorInlayHint.background": "#00000000",
+    "editorInlayHint.background": "#181818",
     "editorStickyScroll.background": "#181818",
     "editorStickyScrollHover.background": "#181818",
     "menu.separatorBackground": "#191919"
