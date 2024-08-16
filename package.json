@@ -27,8 +27,10 @@
   },
   "icon": "icon.png",
   "files": [
-    "extra",
-    "themes"
+    "LICENSE.md",
+    "extra/*",
+    "icon.png",
+    "themes/*"
   ],
   "engines": {
     "vscode": "^1.43.0"
@@ -68,7 +70,8 @@
     "vscode:prepublish": "npm run build",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
-    "release": "bumpp --all && vsce publish --no-dependencies"
+    "release": "bumpp --all && vsce publish --no-dependencies",
+    "pack": "vsce pack --no-dependencies"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.2",
