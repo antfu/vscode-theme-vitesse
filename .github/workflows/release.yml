@@ -10,6 +10,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
+      actions: write
 
     runs-on: ubuntu-latest
     steps:
@@ -28,12 +29,27 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
-      - run: pnpm install
-
       - run: npx changelogithub --no-group
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - run: pnpm install
+
+      - name: Generate .vsix file
+        run: pnpm package
+
+      - name: Upload .vsix to Release
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/v}"
+          ASSET_NAME="theme-vitesse-${VERSION}.vsix"
+
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          REPO="${{ github.repository }}"
+
+          gh release upload "$TAG_NAME" "./${ASSET_NAME}" --repo "$REPO" --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: npm publish --access public
         env:
