@@ -1,6 +1,6 @@
+import type { GetThemeOptions } from './helper'
 import { toArray } from '@antfu/utils'
 import { VitesseThemes } from './colors'
-import type { GetThemeOptions } from './helper'
 import { createThemeHelpers } from './helper'
 
 export default function getTheme(options: GetThemeOptions) {

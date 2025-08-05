@@ -1,4 +1,4 @@
-import { VitesseThemes, colors } from './colors'
+import { colors, VitesseThemes } from './colors'
 
 export interface GetThemeOptions {
   color: 'light' | 'dark'

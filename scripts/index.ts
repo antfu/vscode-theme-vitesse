@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
-import getTheme from './theme'
 import { getXtermTheme } from './extra'
+import getTheme from './theme'
 
 console.log('starting')
 

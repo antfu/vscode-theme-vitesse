@@ -3,7 +3,7 @@
   "name": "theme-vitesse",
   "displayName": "Vitesse Theme",
   "version": "0.8.3",
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@10.14.0",
   "description": "Vitesse theme for VS Code",
   "license": "MIT",
   "repository": {
@@ -65,8 +65,8 @@
     ]
   },
   "scripts": {
-    "build": "esno scripts/index.ts",
-    "dev": "esno watch scripts/index.ts",
+    "build": "tsx scripts/index.ts",
+    "dev": "tsx watch scripts/index.ts",
     "vscode:prepublish": "npm run build",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
@@ -75,20 +75,20 @@
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.25.2",
-    "@antfu/utils": "^0.7.10",
-    "@types/color": "^3.0.6",
+    "@antfu/eslint-config": "^5.1.0",
+    "@antfu/utils": "^9.2.0",
+    "@types/color": "^4.2.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.3.0",
-    "@vscode/vsce": "^2.32.0",
-    "bumpp": "^9.5.1",
-    "color": "^4.2.3",
-    "eslint": "^9.9.0",
-    "esno": "^4.7.0",
-    "fs-extra": "^11.2.0",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
-    "xterm": "^5.3.0"
+    "@types/node": "^24.2.0",
+    "@vscode/vsce": "^3.6.0",
+    "@xterm/xterm": "^5.5.0",
+    "bumpp": "^10.2.2",
+    "color": "^5.0.0",
+    "eslint": "^9.32.0",
+    "fs-extra": "^11.3.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
   },
   "preview": true
 }
