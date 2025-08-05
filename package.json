@@ -71,7 +71,8 @@
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "release": "bumpp --all && vsce publish --no-dependencies",
-    "pack": "vsce pack --no-dependencies"
+    "pack": "vsce pack --no-dependencies",
+    "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.2",
