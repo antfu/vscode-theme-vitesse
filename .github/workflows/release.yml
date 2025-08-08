@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish Extension
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  publish-npm:
+  publish-extension:
     permissions:
       id-token: write
       contents: write
@@ -22,11 +22,10 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
 
-      - name: Use Node.js v18
-        uses: actions/setup-node@v3
+      - name: Set node
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
           cache: pnpm
 
       - run: npx changelogithub --no-group
@@ -39,19 +38,9 @@ jobs:
       - name: Generate .vsix file
         run: pnpm package
 
-      - name: Upload .vsix to Release
-        run: |
-          VERSION="${GITHUB_REF#refs/tags/v}"
-          ASSET_NAME="theme-vitesse-${VERSION}.vsix"
-
-          TAG_NAME="${GITHUB_REF#refs/tags/}"
-          REPO="${{ github.repository }}"
-
-          gh release upload "$TAG_NAME" "./${ASSET_NAME}" --repo "$REPO" --clobber
+      - name: Publish Extension
+        run: npx vsxpub --no-dependencies
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_CONFIG_PROVENANCE: true
+          VSCE_PAT: ${{secrets.VSCE_PAT}}
+          OVSX_PAT: ${{secrets.OVSX_PAT}}
