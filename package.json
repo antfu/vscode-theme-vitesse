@@ -70,8 +70,7 @@
     "vscode:prepublish": "npm run build",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
-    "release": "bumpp --all && vsce publish --no-dependencies",
-    "pack": "vsce pack --no-dependencies",
+    "release": "bumpp --all",
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
