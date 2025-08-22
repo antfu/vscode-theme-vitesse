@@ -3,7 +3,7 @@
   "name": "theme-vitesse",
   "displayName": "Vitesse Theme",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "description": "Vitesse theme for VS Code",
   "license": "MIT",
   "repository": {
@@ -74,19 +74,19 @@
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.1.0",
+    "@antfu/eslint-config": "^5.2.1",
     "@antfu/utils": "^9.2.0",
     "@types/color": "^4.2.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.3.0",
     "@vscode/vsce": "^3.6.0",
     "@xterm/xterm": "^5.5.0",
-    "bumpp": "^10.2.2",
+    "bumpp": "^10.2.3",
     "color": "^5.0.0",
-    "eslint": "^9.32.0",
-    "fs-extra": "^11.3.0",
+    "eslint": "^9.33.0",
+    "fs-extra": "^11.3.1",
     "tsup": "^8.5.0",
-    "tsx": "^4.20.3",
+    "tsx": "^4.20.4",
     "typescript": "^5.9.2"
   },
   "preview": true
